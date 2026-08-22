@@ -17,6 +17,7 @@
             --accent-primary: #38bdf8; --accent-secondary: #0284c7; --accent-glow: rgba(56, 189, 248, 0.2);
             --shadow-hud: 0 0 50px -10px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(56, 189, 248, 0.05);
             --shadow-glow: 0 0 35px -5px rgba(56, 189, 248, 0.35);
+            --audio-freq: 600;
         }
         :root.dark.neon-violet {
             --bg-base: #030109; --bg-surface: rgba(10, 5, 20, 0.88); --bg-glass: rgba(10, 5, 20, 0.75);
@@ -26,6 +27,7 @@
             --accent-primary: #d946ef; --accent-secondary: #a21caf; --accent-glow: rgba(217, 70, 239, 0.2);
             --shadow-hud: 0 0 50px -10px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(217, 70, 239, 0.05);
             --shadow-glow: 0 0 35px -5px rgba(217, 70, 239, 0.35);
+            --audio-freq: 750;
         }
         :root.dark.matrix-green {
             --bg-base: #010903; --bg-surface: rgba(5, 20, 8, 0.88); --bg-glass: rgba(5, 20, 8, 0.75);
@@ -35,6 +37,7 @@
             --accent-primary: #4ade80; --accent-secondary: #16a34a; --accent-glow: rgba(74, 222, 128, 0.2);
             --shadow-hud: 0 0 50px -10px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(74, 222, 128, 0.05);
             --shadow-glow: 0 0 35px -5px rgba(74, 222, 128, 0.35);
+            --audio-freq: 500;
         }
         :root.dark.laser-crimson {
             --bg-base: #090101; --bg-surface: rgba(20, 5, 5, 0.88); --bg-glass: rgba(20, 5, 5, 0.75);
@@ -44,6 +47,7 @@
             --accent-primary: #f87171; --accent-secondary: #dc2626; --accent-glow: rgba(248, 113, 113, 0.2);
             --shadow-hud: 0 0 50px -10px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(248, 113, 113, 0.05);
             --shadow-glow: 0 0 35px -5px rgba(248, 113, 113, 0.35);
+            --audio-freq: 850;
         }
         :root.dark.solar-amber {
             --bg-base: #090601; --bg-surface: rgba(20, 14, 5, 0.88); --bg-glass: rgba(20, 14, 5, 0.75);
@@ -53,6 +57,7 @@
             --accent-primary: #fbbf24; --accent-secondary: #d97706; --accent-glow: rgba(251, 191, 36, 0.2);
             --shadow-hud: 0 0 50px -10px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(251, 191, 36, 0.05);
             --shadow-glow: 0 0 35px -5px rgba(251, 191, 36, 0.35);
+            --audio-freq: 650;
         }
         :root.light {
             --bg-base: #f8fafc; --bg-surface: rgba(255, 255, 255, 0.95); --bg-glass: rgba(255, 255, 255, 0.85);
@@ -61,6 +66,7 @@
             --text-main: #0f172a; --text-muted: #475569; --text-dim: #94a3b8;
             --accent-primary: #0284c7; --accent-secondary: #0369a1; --accent-glow: rgba(2, 132, 199, 0.15);
             --shadow-hud: 0 20px 40px -15px rgba(15, 23, 42, 0.08); --shadow-glow: 0 0 25px -5px rgba(2, 132, 199, 0.25);
+            --audio-freq: 550;
         }
 
         :root {
@@ -73,6 +79,11 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-tap-highlight-color: transparent; }
+
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
 
         .crt-overlay {
             position: fixed; inset: 0; z-index: 9999; pointer-events: none;
@@ -105,9 +116,9 @@
         .hud-frame::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
         .hud-frame:hover::before, .hud-frame:hover::after { opacity: 1; box-shadow: 0 0 8px var(--accent-primary); }
 
-        .master-container { max-width: 1540px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; width: 100%; }
+        .master-container { max-width: 1540px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; width: 100%; min-width: 0; }
 
-        header { border-radius: var(--radius-2xl); padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.85rem; position: relative; z-index: 100; width: 100%; }
+        header { border-radius: var(--radius-2xl); padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.85rem; position: relative; z-index: 100; width: 100%; box-sizing: border-box; }
         header::after { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-primary), transparent); box-shadow: 0 0 10px var(--accent-primary); }
 
         .header-top { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; width: 100%; }
@@ -155,12 +166,18 @@
         .theme-option-card.active { border-color: var(--border-active); background: var(--accent-glow); color: var(--accent-primary); box-shadow: var(--shadow-glow); }
         .theme-preview-dot { width: 12px; height: 12px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); }
 
-        .view { display: none; animation: viewEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; width: 100%; }
-        .view.active { display: flex; flex-direction: column; gap: 1rem; width: 100%; }
+        .view { display: none; animation: viewEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; width: 100%; min-width: 0; }
+        .view.active { display: flex; flex-direction: column; gap: 1rem; width: 100%; min-width: 0; }
         @keyframes viewEnter { from { opacity: 0; transform: translateY(6px) scale(0.995); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
-        .landing-hero { min-height: 65vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem 1rem; border-radius: var(--radius-2xl); position: relative; overflow: hidden; width: 100%; }
-        .landing-hero::before { content: ''; position: absolute; width: 300px; height: 300px; background: var(--accent-primary); filter: blur(120px); opacity: 0.12; z-index: 0; border-radius: 50%; pointer-events: none; }
+        /* DUAL-SIDED DYNAMIC HOVER GLOW FOR LANDING HERO */
+        .landing-hero { min-height: 65vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem 1rem; border-radius: var(--radius-2xl); position: relative; overflow: hidden; width: 100%; box-sizing: border-box; }
+        .landing-hero::before, .landing-hero::after { content: ''; position: absolute; width: 280px; height: 280px; background: var(--accent-primary); filter: blur(130px); opacity: 0.08; z-index: 0; border-radius: 50%; pointer-events: none; transition: opacity 0.4s ease, transform 0.4s ease; }
+        .landing-hero::before { top: 10%; left: -100px; }
+        .landing-hero::after { bottom: 10%; right: -100px; }
+        .landing-hero:hover::before { opacity: 0.22; transform: scale(1.15); }
+        .landing-hero:hover::after { opacity: 0.22; transform: scale(1.15); }
+
         .hero-badge { background: var(--accent-glow); border: 1px solid var(--border-hover); color: var(--accent-primary); padding: 0.35rem 0.85rem; border-radius: 999px; font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; box-shadow: var(--shadow-glow); display: inline-flex; align-items: center; gap: 0.4rem; position: relative; z-index: 1; }
         .hero-title { font-size: clamp(2rem, 4.5vw, 4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; max-width: 850px; position: relative; z-index: 1; }
         .hero-title span { background: linear-gradient(135deg, var(--text-main), var(--accent-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -168,10 +185,10 @@
         .hero-cta { background: var(--accent-primary); color: var(--bg-base); border: none; padding: 0.85rem 2rem; border-radius: var(--radius-lg); font-size: 0.9rem; font-weight: 800; font-family: var(--font-mono); cursor: pointer; transition: var(--transition-fast); box-shadow: var(--shadow-glow); display: inline-flex; align-items: center; gap: 0.6rem; position: relative; z-index: 1; }
         .hero-cta:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 35px var(--accent-primary); filter: brightness(1.1); }
 
-        .dashboard-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; width: 100%; }
+        .dashboard-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; width: 100%; min-width: 0; }
         @media (min-width: 1024px) { .dashboard-grid { grid-template-columns: 360px 1fr; } }
 
-        .panel { border-radius: var(--radius-2xl); padding: 1.15rem; position: relative; width: 100%; min-width: 0; overflow: hidden; }
+        .panel { border-radius: var(--radius-2xl); padding: 1rem; position: relative; width: 100%; min-width: 0; overflow: hidden; box-sizing: border-box; }
         .panel-title { font-size: 0.7rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.9rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); }
         
         .progress-box { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 1rem; margin-bottom: 0.9rem; }
@@ -181,23 +198,23 @@
         .progress-bar-track { background: var(--bg-base); border-radius: 999px; height: 7px; width: 100%; overflow: hidden; border: 1px solid var(--border-subtle); }
         .progress-bar-fill { background: linear-gradient(90deg, var(--accent-primary), var(--success)); height: 100%; width: 0%; border-radius: 999px; transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 0 10px var(--accent-primary); }
 
-        .day-picker { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.35rem; margin-bottom: 0.9rem; width: 100%; }
+        .day-picker { display: grid; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 0.35rem; margin-bottom: 0.9rem; width: 100%; }
         @media (min-width: 640px) { .day-picker { display: flex; flex-direction: column; } }
-        .day-btn { background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-muted); padding: 0.55rem 0.75rem; text-align: center; border-radius: var(--radius-md); cursor: pointer; font-size: 0.75rem; font-weight: 600; font-family: var(--font-mono); transition: var(--transition-fast); width: 100%; }
-        @media (min-width: 640px) { .day-btn { text-align: left; } }
+        .day-btn { background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-muted); padding: 0.55rem 0.5rem; text-align: center; border-radius: var(--radius-md); cursor: pointer; font-size: 0.72rem; font-weight: 600; font-family: var(--font-mono); transition: var(--transition-fast); width: 100%; box-sizing: border-box; }
+        @media (min-width: 640px) { .day-btn { text-align: left; padding: 0.55rem 0.75rem; } }
         .day-btn:hover { border-color: var(--border-hover); color: var(--text-main); background: var(--bg-card-hover); }
         .day-btn.active { background: var(--accent-glow); border-color: var(--border-active); color: var(--accent-primary); box-shadow: var(--shadow-glow); }
 
-        .meta-card { font-size: 0.8rem; color: var(--text-muted); background: var(--bg-card); padding: 1rem; border-radius: var(--radius-xl); border: 1px solid var(--border-subtle); transition: var(--transition-fast); position: relative; width: 100%; overflow: hidden; word-break: break-word; }
-        .meta-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateX(2px); }
+        .meta-card { font-size: 0.8rem; color: var(--text-muted); background: var(--bg-card); padding: 1rem; border-radius: var(--radius-xl); border: 1px solid var(--border-subtle); transition: var(--transition-fast); position: relative; width: 100%; overflow: hidden; word-break: break-word; box-sizing: border-box; cursor: pointer; }
+        .meta-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateX(2px); box-shadow: var(--shadow-glow); }
         .meta-card + .meta-card { margin-top: 0.6rem; }
 
-        .schedule-container { display: flex; flex-direction: column; gap: 0.65rem; max-height: 580px; overflow-y: auto; padding-right: 0.2rem; width: 100%; }
+        .schedule-container { display: flex; flex-direction: column; gap: 0.65rem; max-height: 580px; overflow-y: auto; overflow-x: hidden; padding-right: 0.2rem; width: 100%; min-width: 0; box-sizing: border-box; }
         .schedule-container::-webkit-scrollbar { width: 4px; }
         .schedule-container::-webkit-scrollbar-track { background: transparent; }
         .schedule-container::-webkit-scrollbar-thumb { background: var(--accent-glow); border-radius: 999px; }
         
-        .schedule-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 0.95rem 1rem; display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; transition: var(--transition-fast); position: relative; flex-direction: column; width: 100%; overflow: hidden; word-break: break-word; }
+        .schedule-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 0.85rem 0.95rem; display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; transition: var(--transition-fast); position: relative; flex-direction: column; width: 100%; min-width: 0; overflow: hidden; word-break: break-word; box-sizing: border-box; }
         .schedule-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateX(2px); box-shadow: var(--shadow-glow); }
         .schedule-card.current { border-color: rgba(245, 158, 11, 0.6); background: rgba(245, 158, 11, 0.05); }
         .schedule-card.current::before { content: ''; position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px; background: var(--warning); border-radius: 0 4px 4px 0; box-shadow: 0 0 8px var(--warning); }
@@ -213,16 +230,20 @@
         .schedule-time { font-size: 0.68rem; color: var(--warning); font-family: var(--font-mono); font-weight: 700; margin-bottom: 0.15rem; }
         .schedule-title { font-size: 0.88rem; font-weight: 700; color: var(--text-main); line-height: 1.35; }
 
-        /* INTERACTIVE ACCORDION DETAILS */
-        .tactical-note { max-height: 0; overflow: hidden; transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); font-size: 0.78rem; color: var(--text-muted); border-left: 2px solid var(--accent-primary); padding-left: 0.65rem; margin-left: 2rem; opacity: 0; font-family: var(--font-mono); line-height: 1.5; width: calc(100% - 2rem); }
-        .schedule-card.expanded .tactical-note, .card-item.expanded .tactical-note { max-height: 300px; margin-top: 0.7rem; margin-bottom: 0.4rem; opacity: 1; }
+        /* INTERACTIVE ACCORDION DETAILS & MOBILE WRAP FIX */
+        .tactical-note { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, margin 0.3s ease; font-size: 0.78rem; color: var(--text-muted); border-left: 2px solid var(--accent-primary); padding-left: 0.65rem; margin-left: 0; opacity: 0; font-family: var(--font-mono); line-height: 1.5; width: 100%; max-width: 100%; box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; }
+        @media (min-width: 480px) {
+            .schedule-card .tactical-note { margin-left: 2rem; width: calc(100% - 2rem); }
+        }
+        .schedule-card.expanded .tactical-note, .card-item.expanded .tactical-note, .meta-card.expanded .tactical-note { max-height: 600px; margin-top: 0.7rem; margin-bottom: 0.2rem; opacity: 1; }
 
-        .grid-cards { display: grid; grid-template-columns: 1fr; gap: 1rem; width: 100%; }
-        @media (min-width: 640px) { .grid-cards { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); } }
-        .card-item { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; transition: var(--transition-fast); width: 100%; min-width: 0; word-break: break-word; cursor: pointer; }
+        /* align-items: start FIXES UNWANTED ROW STRETCHING WHEN A CARD EXPANDS */
+        .grid-cards { display: grid; grid-template-columns: 1fr; gap: 1rem; width: 100%; min-width: 0; align-items: start; }
+        @media (min-width: 640px) { .grid-cards { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); } }
+        .card-item { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 1.15rem; display: flex; flex-direction: column; gap: 0.4rem; transition: var(--transition-fast); width: 100%; min-width: 0; word-break: break-word; cursor: pointer; box-sizing: border-box; }
         .card-item:hover { border-color: var(--border-hover); transform: translateY(-2px); box-shadow: var(--shadow-glow); background: var(--bg-card-hover); }
-        .card-item h3 { font-size: 1rem; color: var(--text-main); font-weight: 800; line-height: 1.3; }
-        .card-item p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
+        .card-item h3 { font-size: 0.95rem; color: var(--text-main); font-weight: 800; line-height: 1.3; }
+        .card-item p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
 
         .mobile-hud-bar { position: fixed; bottom: 0; left: 0; right: 0; height: 56px; background: var(--bg-surface); backdrop-filter: blur(25px); border-top: 1px solid var(--border-hover); display: flex; justify-content: space-around; align-items: center; z-index: 900; padding: 0 0.25rem; }
         @media (min-width: 768px) { .mobile-hud-bar { display: none; } }
@@ -305,7 +326,7 @@
                 <span>Tactical Audio FX</span><span id="audioStatusLabel" class="kbd-hint">ON</span>
             </button>
             <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); text-align: center; margin-top:0.4rem;">
-                MONK MODE OS // PRO MAX v4.5
+                MONK MODE OS // PRO MAX v4.7
             </div>
         </div>
     </div>
@@ -317,7 +338,7 @@
                 <div class="brand-cluster">
                     <div class="brand-logo">M</div>
                     <div class="brand-info">
-                        <h1>Monk Mode OS <span>v4.5 // HUD PRO</span></h1>
+                        <h1>Monk Mode OS <span>v4.7 // HUD PRO</span></h1>
                         <p>// NEURAL COMMAND DECK ACTIVE</p>
                     </div>
                 </div>
@@ -422,6 +443,9 @@
         <div id="view-phases" class="view">
             <div class="panel hud-frame">
                 <div class="panel-title">Two-Year Execution Roadmap // Strategic Timeline</div>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    Tap any phase block below to review tactical execution focus and milestone objectives.
+                </p>
                 <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-top: 0.4rem;" id="roadmapContainer"></div>
             </div>
         </div>
@@ -448,16 +472,20 @@
     </div>
 
     <script>
-        /* TACTICAL AUDIO SYNTHESIZER ENGINE */
+        /* TACTICAL AUDIO SYNTHESIZER ENGINE WITH THEME-AWARE FREQUENCIES */
         let audioEnabled = true;
         const AudioCtx = window.AudioContext || window.webkitAudioContext;
         let audioCtx = null;
 
-        function playBeep(freq = 600, type = 'sine', duration = 0.04) {
+        function playBeep(customFreq, type = 'sine', duration = 0.04) {
             if (!audioEnabled) return;
             try {
                 if (!audioCtx) audioCtx = new AudioCtx();
                 if (audioCtx.state === 'suspended') audioCtx.resume();
+                
+                const rootFreq = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--audio-freq').trim()) || 600;
+                const freq = customFreq || rootFreq;
+
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = type;
@@ -474,7 +502,7 @@
         function toggleAudio() {
             audioEnabled = !audioEnabled;
             document.getElementById('audioStatusLabel').innerText = audioEnabled ? 'ON' : 'OFF';
-            if (audioEnabled) playBeep(800, 'triangle', 0.06);
+            if (audioEnabled) playBeep(null, 'triangle', 0.06);
         }
 
         function toggleCRT() {
@@ -713,10 +741,10 @@
         };
 
         const phases = [
-            { title: "Phase 1: Foundation (Months 1–6)", desc: "Establish daily discipline, recover CS GPA baseline, master 1.5-mile run under 10:30, and complete core tactical reading list." },
-            { title: "Phase 2: Acceleration (Months 7–12)", desc: "Intensify software portfolio development, flight physics study, English articulation, and physical stamina peaking." },
-            { title: "Phase 3: Integration (Months 13–18)", desc: "Simulated aptitude and psychometric testing mastery, interview simulations, and peak physical conditioning." },
-            { title: "Phase 4: Execution & Deployment (Months 19–24)", desc: "Final cadet application submission, assessment prep, and flawless execution." }
+            { title: "Phase 1: Foundation (Months 1–6)", desc: "Establish daily discipline, recover CS GPA baseline, master 1.5-mile run under 10:30, and complete core tactical reading list.", notes: "Establish foundational habits. Focus heavily on GPA recovery during early university blocks and strict adherence to physical training splits." },
+            { title: "Phase 2: Acceleration (Months 7–12)", desc: "Intensify software portfolio development, flight physics study, English articulation, and physical stamina peaking.", notes: "Push advanced project complexity, hone technical aviation knowledge, and eliminate English speech hesitation via daily audio logs." },
+            { title: "Phase 3: Integration (Months 13–18)", desc: "Simulated aptitude and psychometric testing mastery, interview simulations, and peak physical conditioning.", notes: "Simulate Ethiopian Airlines cadet selection tests, psychometric exams, and fine-tune physical performance metrics to surpass all thresholds." },
+            { title: "Phase 4: Execution & Deployment (Months 19–24)", desc: "Final cadet application submission, assessment prep, and flawless execution.", notes: "Final polish of documentation, peak physical conditioning state, interview readiness, and absolute mental composure for selection day." }
         ];
 
         /* KEYBOARD NAVIGATION ACCELERATOR */
@@ -737,7 +765,7 @@
         });
 
         function toggleDrawer() {
-            playBeep(700, 'sine', 0.03);
+            playBeep(null, 'sine', 0.03);
             const drawer = document.getElementById('hudDrawer');
             const backdrop = document.getElementById('drawerBackdrop');
             const btn = document.getElementById('hamburgerBtn');
@@ -747,13 +775,13 @@
         }
 
         function toggleThemeModal() {
-            playBeep(750, 'sine', 0.03);
+            playBeep(null, 'sine', 0.03);
             const modal = document.getElementById('themeModalBackdrop');
             modal.classList.toggle('open');
         }
 
         function setTheme(modeClass, themeClass, themeName) {
-            playBeep(900, 'square', 0.04);
+            playBeep(null, 'square', 0.04);
             document.documentElement.className = `${modeClass} ${themeClass}`;
             localStorage.setItem('monk_mode_theme_mode', modeClass);
             localStorage.setItem('monk_mode_theme_class', themeClass);
@@ -780,7 +808,7 @@
         }
 
         function switchView(viewName) {
-            playBeep(650, 'sine', 0.03);
+            playBeep(null, 'sine', 0.03);
             document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
             const header = document.getElementById('masterHeader');
             if (viewName === 'landing') header.style.display = 'none';
@@ -823,7 +851,7 @@
                 btn.className = `day-btn ${day === selectedDay ? 'active' : ''}`;
                 btn.innerText = day;
                 btn.onclick = () => {
-                    playBeep(500, 'sine', 0.03);
+                    playBeep(null, 'sine', 0.03);
                     selectedDay = day;
                     renderDayPicker();
                     renderSchedule();
@@ -876,7 +904,7 @@
                 `;
 
                 card.onclick = () => {
-                    playBeep(550, 'sine', 0.03);
+                    playBeep(null, 'sine', 0.03);
                     const wasExpanded = card.classList.contains('expanded');
                     document.querySelectorAll('.schedule-card').forEach(c => c.classList.remove('expanded'));
                     if (!wasExpanded) {
@@ -892,7 +920,7 @@
         }
 
         function toggleCheck(id) {
-            playBeep(850, 'triangle', 0.04);
+            playBeep(null, 'triangle', 0.04);
             const chk = document.getElementById(id);
             localStorage.setItem(id, chk.checked);
             renderSchedule();
@@ -959,9 +987,9 @@
                 `;
 
                 card.onclick = () => {
-                    playBeep(550, 'sine', 0.03);
+                    playBeep(null, 'sine', 0.03);
                     const wasExpanded = card.classList.contains('expanded');
-                    document.querySelectorAll('.card-item').forEach(c => c.classList.remove('expanded'));
+                    document.querySelectorAll('#bookGridContainer .card-item').forEach(c => c.classList.remove('expanded'));
                     if (!wasExpanded) {
                         card.classList.add('expanded');
                     }
@@ -985,7 +1013,7 @@
                 `;
 
                 card.onclick = () => {
-                    playBeep(550, 'sine', 0.03);
+                    playBeep(null, 'sine', 0.03);
                     const wasExpanded = card.classList.contains('expanded');
                     document.querySelectorAll('#fitnessGridContainer .card-item').forEach(c => c.classList.remove('expanded'));
                     if (!wasExpanded) {
@@ -1037,8 +1065,19 @@
                         ${phaseStatusStr}
                     </div>
                     <div style="font-size: 0.9rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem;">${p.title}</div>
-                    <div style="font-size: 0.78rem;">${p.desc}</div>
+                    <div style="font-size: 0.78rem; margin-bottom: 0.2rem;">${p.desc}</div>
+                    <div class="tactical-note"><strong>Phase Milestone Objectives:</strong> ${p.notes}</div>
                 `;
+
+                card.onclick = () => {
+                    playBeep(null, 'sine', 0.03);
+                    const wasExpanded = card.classList.contains('expanded');
+                    document.querySelectorAll('#roadmapContainer .meta-card').forEach(c => c.classList.remove('expanded'));
+                    if (!wasExpanded) {
+                        card.classList.add('expanded');
+                    }
+                };
+
                 container.appendChild(card);
             });
         }
