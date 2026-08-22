@@ -10,1050 +10,232 @@
     <style>
         /* THEME MATRIX & TOKENS ENGINE */
         :root.dark.cyberpunk-cyan {
-            --bg-base: #010409;
-            --bg-surface: rgba(5, 11, 20, 0.85);
-            --bg-glass: rgba(5, 11, 20, 0.7);
-            --bg-card: rgba(10, 18, 34, 0.65);
-            --bg-card-hover: rgba(18, 28, 52, 0.85);
-            --border-subtle: rgba(56, 189, 248, 0.18);
-            --border-hover: rgba(56, 189, 248, 0.45);
-            --border-active: rgba(56, 189, 248, 0.9);
-            --text-main: #f0f6fc;
-            --text-muted: #8b949e;
-            --text-dim: #484f58;
-            --accent-primary: #38bdf8;
-            --accent-secondary: #0284c7;
-            --accent-glow: rgba(56, 189, 248, 0.2);
-            --accent-glow-strong: rgba(56, 189, 248, 0.45);
+            --bg-base: #010409; --bg-surface: rgba(5, 11, 20, 0.88); --bg-glass: rgba(5, 11, 20, 0.75);
+            --bg-card: rgba(10, 18, 34, 0.75); --bg-card-hover: rgba(18, 28, 52, 0.9);
+            --border-subtle: rgba(56, 189, 248, 0.18); --border-hover: rgba(56, 189, 248, 0.45); --border-active: rgba(56, 189, 248, 0.9);
+            --text-main: #f0f6fc; --text-muted: #8b949e; --text-dim: #484f58;
+            --accent-primary: #38bdf8; --accent-secondary: #0284c7; --accent-glow: rgba(56, 189, 248, 0.2);
             --shadow-hud: 0 0 50px -10px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(56, 189, 248, 0.05);
             --shadow-glow: 0 0 35px -5px rgba(56, 189, 248, 0.35);
         }
-
         :root.dark.neon-violet {
-            --bg-base: #030109;
-            --bg-surface: rgba(10, 5, 20, 0.85);
-            --bg-glass: rgba(10, 5, 20, 0.7);
-            --bg-card: rgba(18, 10, 34, 0.65);
-            --bg-card-hover: rgba(28, 16, 52, 0.85);
-            --border-subtle: rgba(217, 70, 239, 0.18);
-            --border-hover: rgba(217, 70, 239, 0.45);
-            --border-active: rgba(217, 70, 239, 0.9);
-            --text-main: #fae8ff;
-            --text-muted: #a188af;
-            --text-dim: #5c4b69;
-            --accent-primary: #d946ef;
-            --accent-secondary: #a21caf;
-            --accent-glow: rgba(217, 70, 239, 0.2);
-            --accent-glow-strong: rgba(217, 70, 239, 0.45);
+            --bg-base: #030109; --bg-surface: rgba(10, 5, 20, 0.88); --bg-glass: rgba(10, 5, 20, 0.75);
+            --bg-card: rgba(18, 10, 34, 0.75); --bg-card-hover: rgba(28, 16, 52, 0.9);
+            --border-subtle: rgba(217, 70, 239, 0.18); --border-hover: rgba(217, 70, 239, 0.45); --border-active: rgba(217, 70, 239, 0.9);
+            --text-main: #fae8ff; --text-muted: #a188af; --text-dim: #5c4b69;
+            --accent-primary: #d946ef; --accent-secondary: #a21caf; --accent-glow: rgba(217, 70, 239, 0.2);
             --shadow-hud: 0 0 50px -10px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(217, 70, 239, 0.05);
             --shadow-glow: 0 0 35px -5px rgba(217, 70, 239, 0.35);
         }
-
         :root.dark.matrix-green {
-            --bg-base: #010903;
-            --bg-surface: rgba(5, 20, 8, 0.85);
-            --bg-glass: rgba(5, 20, 8, 0.7);
-            --bg-card: rgba(10, 34, 15, 0.65);
-            --bg-card-hover: rgba(16, 52, 24, 0.85);
-            --border-subtle: rgba(74, 222, 128, 0.18);
-            --border-hover: rgba(74, 222, 128, 0.45);
-            --border-active: rgba(74, 222, 128, 0.9);
-            --text-main: #f0fdf4;
-            --text-muted: #86efac;
-            --text-dim: #3f624d;
-            --accent-primary: #4ade80;
-            --accent-secondary: #16a34a;
-            --accent-glow: rgba(74, 222, 128, 0.2);
-            --accent-glow-strong: rgba(74, 222, 128, 0.45);
+            --bg-base: #010903; --bg-surface: rgba(5, 20, 8, 0.88); --bg-glass: rgba(5, 20, 8, 0.75);
+            --bg-card: rgba(10, 34, 15, 0.75); --bg-card-hover: rgba(16, 52, 24, 0.9);
+            --border-subtle: rgba(74, 222, 128, 0.18); --border-hover: rgba(74, 222, 128, 0.45); --border-active: rgba(74, 222, 128, 0.9);
+            --text-main: #f0fdf4; --text-muted: #86efac; --text-dim: #3f624d;
+            --accent-primary: #4ade80; --accent-secondary: #16a34a; --accent-glow: rgba(74, 222, 128, 0.2);
             --shadow-hud: 0 0 50px -10px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(74, 222, 128, 0.05);
             --shadow-glow: 0 0 35px -5px rgba(74, 222, 128, 0.35);
         }
-
         :root.dark.laser-crimson {
-            --bg-base: #090101;
-            --bg-surface: rgba(20, 5, 5, 0.85);
-            --bg-glass: rgba(20, 5, 5, 0.7);
-            --bg-card: rgba(34, 10, 10, 0.65);
-            --bg-card-hover: rgba(52, 16, 16, 0.85);
-            --border-subtle: rgba(248, 113, 113, 0.18);
-            --border-hover: rgba(248, 113, 113, 0.45);
-            --border-active: rgba(248, 113, 113, 0.9);
-            --text-main: #fef2f2;
-            --text-muted: #fca5a5;
-            --text-dim: #623f3f;
-            --accent-primary: #f87171;
-            --accent-secondary: #dc2626;
-            --accent-glow: rgba(248, 113, 113, 0.2);
-            --accent-glow-strong: rgba(248, 113, 113, 0.45);
+            --bg-base: #090101; --bg-surface: rgba(20, 5, 5, 0.88); --bg-glass: rgba(20, 5, 5, 0.75);
+            --bg-card: rgba(34, 10, 10, 0.75); --bg-card-hover: rgba(52, 16, 16, 0.9);
+            --border-subtle: rgba(248, 113, 113, 0.18); --border-hover: rgba(248, 113, 113, 0.45); --border-active: rgba(248, 113, 113, 0.9);
+            --text-main: #fef2f2; --text-muted: #fca5a5; --text-dim: #623f3f;
+            --accent-primary: #f87171; --accent-secondary: #dc2626; --accent-glow: rgba(248, 113, 113, 0.2);
             --shadow-hud: 0 0 50px -10px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(248, 113, 113, 0.05);
             --shadow-glow: 0 0 35px -5px rgba(248, 113, 113, 0.35);
         }
-
         :root.dark.solar-amber {
-            --bg-base: #090601;
-            --bg-surface: rgba(20, 14, 5, 0.85);
-            --bg-glass: rgba(20, 14, 5, 0.7);
-            --bg-card: rgba(34, 24, 10, 0.65);
-            --bg-card-hover: rgba(52, 38, 16, 0.85);
-            --border-subtle: rgba(251, 191, 36, 0.18);
-            --border-hover: rgba(251, 191, 36, 0.45);
-            --border-active: rgba(251, 191, 36, 0.9);
-            --text-main: #fefce8;
-            --text-muted: #fde047;
-            --text-dim: #62573f;
-            --accent-primary: #fbbf24;
-            --accent-secondary: #d97706;
-            --accent-glow: rgba(251, 191, 36, 0.2);
-            --accent-glow-strong: rgba(251, 191, 36, 0.45);
+            --bg-base: #090601; --bg-surface: rgba(20, 14, 5, 0.88); --bg-glass: rgba(20, 14, 5, 0.75);
+            --bg-card: rgba(34, 24, 10, 0.75); --bg-card-hover: rgba(52, 38, 16, 0.9);
+            --border-subtle: rgba(251, 191, 36, 0.18); --border-hover: rgba(251, 191, 36, 0.45); --border-active: rgba(251, 191, 36, 0.9);
+            --text-main: #fefce8; --text-muted: #fde047; --text-dim: #62573f;
+            --accent-primary: #fbbf24; --accent-secondary: #d97706; --accent-glow: rgba(251, 191, 36, 0.2);
             --shadow-hud: 0 0 50px -10px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(251, 191, 36, 0.05);
             --shadow-glow: 0 0 35px -5px rgba(251, 191, 36, 0.35);
         }
-
         :root.light {
-            --bg-base: #f8fafc;
-            --bg-surface: rgba(255, 255, 255, 0.92);
-            --bg-glass: rgba(255, 255, 255, 0.8);
-            --bg-card: rgba(241, 245, 249, 0.85);
-            --bg-card-hover: rgba(226, 232, 240, 0.95);
-            --border-subtle: rgba(14, 116, 144, 0.2);
-            --border-hover: rgba(14, 116, 144, 0.5);
-            --border-active: rgba(14, 116, 144, 0.9);
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --text-dim: #94a3b8;
-            --accent-primary: #0284c7;
-            --accent-secondary: #0369a1;
-            --accent-glow: rgba(2, 132, 199, 0.15);
-            --accent-glow-strong: rgba(2, 132, 199, 0.35);
-            --shadow-hud: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
-            --shadow-glow: 0 0 25px -5px rgba(2, 132, 199, 0.25);
+            --bg-base: #f8fafc; --bg-surface: rgba(255, 255, 255, 0.95); --bg-glass: rgba(255, 255, 255, 0.85);
+            --bg-card: rgba(241, 245, 249, 0.9); --bg-card-hover: rgba(226, 232, 240, 0.98);
+            --border-subtle: rgba(14, 116, 144, 0.2); --border-hover: rgba(14, 116, 144, 0.5); --border-active: rgba(14, 116, 144, 0.9);
+            --text-main: #0f172a; --text-muted: #475569; --text-dim: #94a3b8;
+            --accent-primary: #0284c7; --accent-secondary: #0369a1; --accent-glow: rgba(2, 132, 199, 0.15);
+            --shadow-hud: 0 20px 40px -15px rgba(15, 23, 42, 0.08); --shadow-glow: 0 0 25px -5px rgba(2, 132, 199, 0.25);
         }
 
         :root {
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
+            --success: #10b981; --warning: #f59e0b; --danger: #ef4444;
             --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
-            --radius-2xl: 24px;
-            --radius-xl: 16px;
-            --radius-lg: 12px;
-            --radius-md: 8px;
-            --radius-sm: 4px;
+            --radius-2xl: 20px; --radius-xl: 14px; --radius-lg: 10px; --radius-md: 6px; --radius-sm: 4px;
             --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             --transition-normal: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-tap-highlight-color: transparent; }
 
-        /* CRT SCANLINE OVERLAY EFFECT */
         .crt-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            pointer-events: none;
+            position: fixed; inset: 0; z-index: 9999; pointer-events: none;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
-            background-size: 100% 4px;
-            opacity: 0.25;
-            transition: opacity 0.3s ease;
+            background-size: 100% 4px; opacity: 0.2; transition: opacity 0.3s ease;
         }
+        .crt-overlay.disabled { opacity: 0; }
 
-        .crt-overlay.disabled {
-            opacity: 0;
-        }
-
-        /* BACKGROUND ENGINE */
         .cyber-bg-canvas {
-            position: fixed;
-            inset: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -999;
-            pointer-events: none;
-            background: var(--bg-base);
+            position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -999;
+            pointer-events: none; background: var(--bg-base);
         }
 
         body {
-            background-color: transparent;
-            color: var(--text-main);
-            font-family: var(--font-sans);
-            line-height: 1.5;
-            min-height: 100vh;
-            padding: 0.5rem;
-            padding-bottom: 5rem;
-            overflow-x: hidden;
-            transition: color 0.3s ease;
+            background-color: transparent; color: var(--text-main); font-family: var(--font-sans);
+            line-height: 1.45; min-height: 100vh; padding: 0.4rem; padding-bottom: 5.5rem;
+            overflow-x: hidden; transition: color 0.3s ease;
         }
+        @media (min-width: 768px) { body { padding: 1.25rem; padding-bottom: 2rem; } }
 
-        @media (min-width: 768px) {
-            body { padding: 1.25rem; padding-bottom: 2rem; }
-        }
-
-        /* HUD CORNER BRACKETS STYLING */
         .hud-frame {
-            position: relative;
-            background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border-subtle);
-            box-shadow: var(--shadow-hud);
-            transition: var(--transition-normal);
+            position: relative; background: var(--bg-glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-subtle); box-shadow: var(--shadow-hud); transition: var(--transition-normal);
         }
-
         .hud-frame::before, .hud-frame::after {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-color: var(--accent-primary);
-            border-style: solid;
-            pointer-events: none;
-            opacity: 0.65;
-            transition: var(--transition-fast);
+            content: ''; position: absolute; width: 6px; height: 6px;
+            border-color: var(--accent-primary); border-style: solid; pointer-events: none; opacity: 0.65; transition: var(--transition-fast);
         }
-
         .hud-frame::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
         .hud-frame::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+        .hud-frame:hover::before, .hud-frame:hover::after { opacity: 1; box-shadow: 0 0 8px var(--accent-primary); }
 
-        .hud-frame:hover::before, .hud-frame:hover::after {
-            opacity: 1;
-            box-shadow: 0 0 10px var(--accent-primary);
-        }
+        .master-container { max-width: 1540px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; width: 100%; }
 
-        .master-container {
-            max-width: 1540px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
+        header { border-radius: var(--radius-2xl); padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.85rem; position: relative; z-index: 100; width: 100%; }
+        header::after { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-primary), transparent); box-shadow: 0 0 10px var(--accent-primary); }
 
-        /* HEADER & NAVIGATION */
-        header {
-            border-radius: var(--radius-2xl);
-            padding: 1.1rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            position: relative;
-            z-index: 100;
-        }
+        .header-top { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; width: 100%; }
+        .brand-cluster { display: flex; align-items: center; gap: 0.75rem; min-width: 0; }
+        .brand-logo { width: 40px; height: 40px; flex-shrink: 0; border-radius: var(--radius-lg); background: var(--accent-glow); border: 1px solid var(--border-hover); display: flex; align-items: center; justify-content: center; color: var(--accent-primary); font-family: var(--font-mono); font-weight: 800; font-size: 1.15rem; box-shadow: var(--shadow-glow); }
+        .brand-info { min-width: 0; }
+        .brand-info h1 { font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; white-space: nowrap; }
+        .brand-info h1 span { color: var(--accent-primary); font-family: var(--font-mono); font-weight: 600; font-size: 0.65rem; background: var(--accent-glow); padding: 0.1rem 0.4rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); }
+        .brand-info p { font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-        header::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 10%; right: 10%; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
-            box-shadow: 0 0 12px var(--accent-primary);
-        }
+        .header-controls { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+        .hud-btn { background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--accent-primary); height: 38px; padding: 0 0.75rem; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: var(--transition-fast); white-space: nowrap; }
+        .hud-btn:hover { background: var(--accent-glow); border-color: var(--accent-primary); transform: translateY(-1px); box-shadow: var(--shadow-glow); }
 
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .brand-cluster {
-            display: flex;
-            align-items: center;
-            gap: 0.85rem;
-        }
-
-        .brand-logo {
-            width: 44px;
-            height: 44px;
-            border-radius: var(--radius-lg);
-            background: var(--accent-glow);
-            border: 1px solid var(--border-hover);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-primary);
-            font-family: var(--font-mono);
-            font-weight: 800;
-            font-size: 1.25rem;
-            box-shadow: var(--shadow-glow);
-            position: relative;
-        }
-
-        .brand-info h1 {
-            font-size: 1.15rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .brand-info h1 span {
-            color: var(--accent-primary);
-            font-family: var(--font-mono);
-            font-weight: 600;
-            font-size: 0.7rem;
-            background: var(--accent-glow);
-            padding: 0.15rem 0.5rem;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border-subtle);
-        }
-
-        .brand-info p {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-family: var(--font-mono);
-        }
-
-        .header-controls {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .hud-btn {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            color: var(--accent-primary);
-            height: 42px;
-            padding: 0 0.9rem;
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition-fast);
-        }
-
-        .hud-btn:hover {
-            background: var(--accent-glow);
-            border-color: var(--accent-primary);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .hud-btn:active { transform: translateY(1px); }
-
-        .hud-hamburger-btn {
-            width: 42px;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 4.5px;
-        }
-
-        .hud-hamburger-btn span {
-            display: block;
-            width: 18px;
-            height: 2px;
-            background: var(--accent-primary);
-            border-radius: 2px;
-            transition: var(--transition-fast);
-        }
-
-        .hud-hamburger-btn.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .hud-hamburger-btn { width: 38px; padding: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; }
+        .hud-hamburger-btn span { display: block; width: 16px; height: 2px; background: var(--accent-primary); border-radius: 2px; transition: var(--transition-fast); }
+        .hud-hamburger-btn.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
         .hud-hamburger-btn.active span:nth-child(2) { opacity: 0; }
-        .hud-hamburger-btn.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+        .hud-hamburger-btn.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-        .header-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            border-top: 1px solid var(--border-subtle);
-            padding-top: 0.75rem;
-        }
+        .header-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.6rem; border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; width: 100%; }
+        .status-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; min-width: 0; }
+        .badge { background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.65rem; font-weight: 600; font-family: var(--font-mono); color: var(--warning); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.35rem; }
+        .badge.accent { color: var(--accent-primary); border-color: var(--border-hover); background: var(--accent-glow); }
+        .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; box-shadow: 0 0 6px currentColor; flex-shrink: 0; }
+        #clockDisplay { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem; background: var(--bg-card); padding: 0.25rem 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); }
 
-        .status-badges {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            padding: 0.3rem 0.75rem;
-            border-radius: 999px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            font-family: var(--font-mono);
-            color: var(--warning);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .badge.accent {
-            color: var(--accent-primary);
-            border-color: var(--border-hover);
-            background: var(--accent-glow);
-        }
-
-        .badge-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: currentColor;
-            box-shadow: 0 0 8px currentColor;
-        }
-
-        #clockDisplay {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--bg-card);
-            padding: 0.3rem 0.75rem;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border-subtle);
-        }
-
-        /* DRAWER & MODAL WINDOWS */
-        .drawer-backdrop, .modal-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(1, 4, 9, 0.75);
-            backdrop-filter: blur(12px);
-            z-index: 998;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .drawer-backdrop.active, .modal-backdrop.open {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .hud-nav-drawer {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            max-width: 380px;
-            height: 100vh;
-            background: var(--bg-surface);
-            backdrop-filter: blur(25px);
-            border-left: 1px solid var(--border-hover);
-            box-shadow: -20px 0 50px rgba(0, 0, 0, 0.6);
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            padding: 5rem 1.75rem 2rem 1.75rem;
-            transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
+        .drawer-backdrop, .modal-backdrop { position: fixed; inset: 0; background: rgba(1, 4, 9, 0.8); backdrop-filter: blur(12px); z-index: 998; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .drawer-backdrop.active, .modal-backdrop.open { opacity: 1; pointer-events: auto; }
+        .hud-nav-drawer { position: fixed; top: 0; right: -100%; width: 100%; max-width: 340px; height: 100vh; background: var(--bg-surface); backdrop-filter: blur(25px); border-left: 1px solid var(--border-hover); box-shadow: -20px 0 50px rgba(0, 0, 0, 0.6); z-index: 999; display: flex; flex-direction: column; padding: 4rem 1.25rem 1.5rem 1.25rem; transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
         .hud-nav-drawer.open { right: 0; }
+        .drawer-header { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border-subtle); }
+        .drawer-links { display: flex; flex-direction: column; gap: 0.5rem; overflow-y: auto; }
+        .drawer-link { background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-muted); padding: 0.75rem 1rem; border-radius: var(--radius-lg); font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; text-align: left; cursor: pointer; transition: var(--transition-fast); display: flex; align-items: center; justify-content: space-between; }
+        .drawer-link:hover, .drawer-link.active { color: var(--accent-primary); border-color: var(--border-active); background: var(--accent-glow); box-shadow: var(--shadow-glow); transform: translateX(-3px); }
+        .kbd-hint { font-size: 0.6rem; background: var(--bg-base); border: 1px solid var(--border-subtle); padding: 0.1rem 0.35rem; border-radius: var(--radius-sm); color: var(--text-dim); }
 
-        .drawer-header {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .drawer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.65rem;
-            overflow-y: auto;
-        }
-
-        .drawer-link {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            color: var(--text-muted);
-            padding: 0.9rem 1.15rem;
-            border-radius: var(--radius-lg);
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-align: left;
-            cursor: pointer;
-            transition: var(--transition-fast);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .drawer-link:hover, .drawer-link.active {
-            color: var(--accent-primary);
-            border-color: var(--border-active);
-            background: var(--accent-glow);
-            box-shadow: var(--shadow-glow);
-            transform: translateX(-3px);
-        }
-
-        .kbd-hint {
-            font-size: 0.65rem;
-            background: var(--bg-base);
-            border: 1px solid var(--border-subtle);
-            padding: 0.1rem 0.4rem;
-            border-radius: var(--radius-sm);
-            color: var(--text-dim);
-        }
-
-        /* THEME MODAL GRID */
-        .modal-backdrop {
-            z-index: 1005;
-            display: grid;
-            place-content: center;
-            padding: 1rem;
-        }
-
-        .theme-modal {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-hover);
-            border-radius: var(--radius-2xl);
-            padding: 1.75rem;
-            width: 100%;
-            max-width: 460px;
-            box-shadow: var(--shadow-hud);
-            display: flex;
-            flex-direction: column;
-            gap: 1.1rem;
-            transform: scale(0.95);
-            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
+        .modal-backdrop { z-index: 1005; display: grid; place-content: center; padding: 0.75rem; }
+        .theme-modal { background: var(--bg-surface); border: 1px solid var(--border-hover); border-radius: var(--radius-2xl); padding: 1.25rem; width: 100%; max-width: 420px; box-shadow: var(--shadow-hud); display: flex; flex-direction: column; gap: 1rem; transform: scale(0.95); transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
         .modal-backdrop.open .theme-modal { transform: scale(1); }
+        .theme-modal h3 { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.12em; display: flex; justify-content: space-between; align-items: center; }
+        .theme-options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+        .theme-option-card { background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 0.75rem; border-radius: var(--radius-lg); cursor: pointer; display: flex; flex-direction: column; gap: 0.3rem; transition: var(--transition-fast); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; }
+        .theme-option-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateY(-2px); }
+        .theme-option-card.active { border-color: var(--border-active); background: var(--accent-glow); color: var(--accent-primary); box-shadow: var(--shadow-glow); }
+        .theme-preview-dot { width: 12px; height: 12px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); }
 
-        .theme-modal h3 {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--accent-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .view { display: none; animation: viewEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; width: 100%; }
+        .view.active { display: flex; flex-direction: column; gap: 1rem; width: 100%; }
+        @keyframes viewEnter { from { opacity: 0; transform: translateY(6px) scale(0.995); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
-        .theme-options-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.65rem;
-        }
+        .landing-hero { min-height: 65vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem 1rem; border-radius: var(--radius-2xl); position: relative; overflow: hidden; width: 100%; }
+        .landing-hero::before { content: ''; position: absolute; width: 300px; height: 300px; background: var(--accent-primary); filter: blur(120px); opacity: 0.12; z-index: 0; border-radius: 50%; pointer-events: none; }
+        .hero-badge { background: var(--accent-glow); border: 1px solid var(--border-hover); color: var(--accent-primary); padding: 0.35rem 0.85rem; border-radius: 999px; font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; box-shadow: var(--shadow-glow); display: inline-flex; align-items: center; gap: 0.4rem; position: relative; z-index: 1; }
+        .hero-title { font-size: clamp(2rem, 4.5vw, 4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; max-width: 850px; position: relative; z-index: 1; }
+        .hero-title span { background: linear-gradient(135deg, var(--text-main), var(--accent-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-desc { font-size: clamp(0.9rem, 1.4vw, 1.1rem); color: var(--text-muted); max-width: 600px; margin-bottom: 1.8rem; position: relative; z-index: 1; }
+        .hero-cta { background: var(--accent-primary); color: var(--bg-base); border: none; padding: 0.85rem 2rem; border-radius: var(--radius-lg); font-size: 0.9rem; font-weight: 800; font-family: var(--font-mono); cursor: pointer; transition: var(--transition-fast); box-shadow: var(--shadow-glow); display: inline-flex; align-items: center; gap: 0.6rem; position: relative; z-index: 1; }
+        .hero-cta:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 35px var(--accent-primary); filter: brightness(1.1); }
 
-        .theme-option-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            padding: 0.85rem;
-            border-radius: var(--radius-lg);
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-            transition: var(--transition-fast);
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
+        .dashboard-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; width: 100%; }
+        @media (min-width: 1024px) { .dashboard-grid { grid-template-columns: 360px 1fr; } }
 
-        .theme-option-card:hover {
-            border-color: var(--border-hover);
-            background: var(--bg-card-hover);
-            transform: translateY(-2px);
-        }
+        .panel { border-radius: var(--radius-2xl); padding: 1.15rem; position: relative; width: 100%; min-width: 0; overflow: hidden; }
+        .panel-title { font-size: 0.7rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.9rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); }
+        
+        .progress-box { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 1rem; margin-bottom: 0.9rem; }
+        .progress-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; }
+        .progress-label { font-size: 0.68rem; color: var(--text-dim); font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; }
+        .progress-value { font-size: 1.6rem; font-weight: 800; font-family: var(--font-mono); color: var(--accent-primary); letter-spacing: -0.03em; text-shadow: 0 0 12px var(--accent-glow); }
+        .progress-bar-track { background: var(--bg-base); border-radius: 999px; height: 7px; width: 100%; overflow: hidden; border: 1px solid var(--border-subtle); }
+        .progress-bar-fill { background: linear-gradient(90deg, var(--accent-primary), var(--success)); height: 100%; width: 0%; border-radius: 999px; transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 0 10px var(--accent-primary); }
 
-        .theme-option-card.active {
-            border-color: var(--border-active);
-            background: var(--accent-glow);
-            color: var(--accent-primary);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .theme-preview-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        /* VIEW CONTAINERS & PANELS */
-        .view {
-            display: none;
-            animation: viewEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .view.active {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        @keyframes viewEnter {
-            from { opacity: 0; transform: translateY(8px) scale(0.995); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .landing-hero {
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2.5rem 1.25rem;
-            border-radius: var(--radius-2xl);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .landing-hero::before {
-            content: '';
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: var(--accent-primary);
-            filter: blur(130px);
-            opacity: 0.14;
-            z-index: 0;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero-badge {
-            background: var(--accent-glow);
-            border: 1px solid var(--border-hover);
-            color: var(--accent-primary);
-            padding: 0.4rem 1rem;
-            border-radius: 999px;
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-glow);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-title {
-            font-size: clamp(2.2rem, 5vw, 4.5rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            margin-bottom: 1.25rem;
-            max-width: 900px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-title span {
-            background: linear-gradient(135deg, var(--text-main), var(--accent-primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-desc {
-            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
-            color: var(--text-muted);
-            max-width: 650px;
-            margin-bottom: 2.25rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-cta {
-            background: var(--accent-primary);
-            color: var(--bg-base);
-            border: none;
-            padding: 0.95rem 2.25rem;
-            border-radius: var(--radius-lg);
-            font-size: 0.95rem;
-            font-weight: 800;
-            font-family: var(--font-mono);
-            cursor: pointer;
-            transition: var(--transition-fast);
-            box-shadow: var(--shadow-glow);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 0 40px var(--accent-primary);
-            filter: brightness(1.1);
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
-        }
-
-        @media (min-width: 1024px) {
-            .dashboard-grid { grid-template-columns: 380px 1fr; }
-        }
-
-        .panel {
-            border-radius: var(--radius-2xl);
-            padding: 1.5rem;
-            position: relative;
-        }
-
-        .panel-title {
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-family: var(--font-mono);
-        }
-
-        .progress-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-xl);
-            padding: 1.2rem;
-            margin-bottom: 1.1rem;
-        }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.65rem;
-        }
-
-        .progress-label {
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            font-family: var(--font-mono);
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .progress-value {
-            font-size: 1.8rem;
-            font-weight: 800;
-            font-family: var(--font-mono);
-            color: var(--accent-primary);
-            letter-spacing: -0.03em;
-            text-shadow: 0 0 15px var(--accent-glow);
-        }
-
-        .progress-bar-track {
-            background: var(--bg-base);
-            border-radius: 999px;
-            height: 8px;
-            width: 100%;
-            overflow: hidden;
-            border: 1px solid var(--border-subtle);
-        }
-
-        .progress-bar-fill {
-            background: linear-gradient(90deg, var(--accent-primary), var(--success));
-            height: 100%;
-            width: 0%;
-            border-radius: 999px;
-            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 0 12px var(--accent-primary);
-        }
-
-        /* DAY PICKER & CONTROLS */
-        .day-picker {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.45rem;
-            margin-bottom: 1.1rem;
-        }
-
-        @media (min-width: 640px) {
-            .day-picker { display: flex; flex-direction: column; }
-        }
-
-        .day-btn {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            color: var(--text-muted);
-            padding: 0.65rem 0.85rem;
-            text-align: center;
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            font-size: 0.78rem;
-            font-weight: 600;
-            font-family: var(--font-mono);
-            transition: var(--transition-fast);
-        }
-
+        .day-picker { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.35rem; margin-bottom: 0.9rem; width: 100%; }
+        @media (min-width: 640px) { .day-picker { display: flex; flex-direction: column; } }
+        .day-btn { background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-muted); padding: 0.55rem 0.75rem; text-align: center; border-radius: var(--radius-md); cursor: pointer; font-size: 0.75rem; font-weight: 600; font-family: var(--font-mono); transition: var(--transition-fast); width: 100%; }
         @media (min-width: 640px) { .day-btn { text-align: left; } }
+        .day-btn:hover { border-color: var(--border-hover); color: var(--text-main); background: var(--bg-card-hover); }
+        .day-btn.active { background: var(--accent-glow); border-color: var(--border-active); color: var(--accent-primary); box-shadow: var(--shadow-glow); }
 
-        .day-btn:hover {
-            border-color: var(--border-hover);
-            color: var(--text-main);
-            background: var(--bg-card-hover);
-        }
+        .meta-card { font-size: 0.8rem; color: var(--text-muted); background: var(--bg-card); padding: 1rem; border-radius: var(--radius-xl); border: 1px solid var(--border-subtle); transition: var(--transition-fast); position: relative; width: 100%; overflow: hidden; word-break: break-word; }
+        .meta-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateX(2px); }
+        .meta-card + .meta-card { margin-top: 0.6rem; }
 
-        .day-btn.active {
-            background: var(--accent-glow);
-            border-color: var(--border-active);
-            color: var(--accent-primary);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .meta-card {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            background: var(--bg-card);
-            padding: 1.15rem 1.25rem;
-            border-radius: var(--radius-xl);
-            border: 1px solid var(--border-subtle);
-            transition: var(--transition-fast);
-            position: relative;
-        }
-
-        .meta-card:hover {
-            border-color: var(--border-hover);
-            background: var(--bg-card-hover);
-            transform: translateX(2px);
-        }
-
-        .meta-card + .meta-card { margin-top: 0.75rem; }
-
-        /* SCHEDULE CARDS & TASKS */
-        .schedule-container {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            max-height: 520px;
-            overflow-y: auto;
-            padding-right: 0.3rem;
-        }
-
-        .schedule-container::-webkit-scrollbar { width: 5px; }
+        .schedule-container { display: flex; flex-direction: column; gap: 0.65rem; max-height: 580px; overflow-y: auto; padding-right: 0.2rem; width: 100%; }
+        .schedule-container::-webkit-scrollbar { width: 4px; }
         .schedule-container::-webkit-scrollbar-track { background: transparent; }
         .schedule-container::-webkit-scrollbar-thumb { background: var(--accent-glow); border-radius: 999px; }
-
-        .schedule-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-lg);
-            padding: 1.1rem 1.25rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.85rem;
-            cursor: pointer;
-            transition: var(--transition-fast);
-            position: relative;
-        }
-
-        .schedule-card:hover {
-            border-color: var(--border-hover);
-            background: var(--bg-card-hover);
-            transform: translateX(3px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .schedule-card.current {
-            border-color: rgba(245, 158, 11, 0.6);
-            background: rgba(245, 158, 11, 0.06);
-        }
-
-        .schedule-card.current::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 12px; bottom: 12px; width: 3px;
-            background: var(--warning);
-            border-radius: 0 4px 4px 0;
-            box-shadow: 0 0 10px var(--warning);
-        }
-
-        .schedule-card input[type="checkbox"] {
-            margin-top: 0.15rem;
-            appearance: none;
-            -webkit-appearance: none;
-            width: 1.35rem;
-            height: 1.35rem;
-            background: var(--bg-base);
-            border: 1px solid var(--border-hover);
-            border-radius: var(--radius-sm);
-            cursor: pointer;
-            transition: var(--transition-fast);
-            flex-shrink: 0;
-            display: grid;
-            place-content: center;
-        }
-
-        .schedule-card input[type="checkbox"]::before {
-            content: "";
-            width: 0.7rem;
-            height: 0.7rem;
-            transform: scale(0);
-            transition: 0.12s transform cubic-bezier(0.16, 1, 0.3, 1);
-            background-color: var(--success);
-            border-radius: 2px;
-        }
-
-        .schedule-card input[type="checkbox"]:checked {
-            background: rgba(16, 185, 129, 0.2);
-            border-color: var(--success);
-            box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
-        }
-
+        
+        .schedule-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 0.95rem 1rem; display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; transition: var(--transition-fast); position: relative; flex-direction: column; width: 100%; overflow: hidden; word-break: break-word; }
+        .schedule-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateX(2px); box-shadow: var(--shadow-glow); }
+        .schedule-card.current { border-color: rgba(245, 158, 11, 0.6); background: rgba(245, 158, 11, 0.05); }
+        .schedule-card.current::before { content: ''; position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px; background: var(--warning); border-radius: 0 4px 4px 0; box-shadow: 0 0 8px var(--warning); }
+        
+        .schedule-card-header { display: flex; width: 100%; gap: 0.75rem; align-items: flex-start; min-width: 0; }
+        
+        .schedule-card input[type="checkbox"] { margin-top: 0.1rem; appearance: none; -webkit-appearance: none; width: 1.25rem; height: 1.25rem; background: var(--bg-base); border: 1px solid var(--border-hover); border-radius: var(--radius-sm); cursor: pointer; transition: var(--transition-fast); flex-shrink: 0; display: grid; place-content: center; }
+        .schedule-card input[type="checkbox"]::before { content: ""; width: 0.65rem; height: 0.65rem; transform: scale(0); transition: 0.12s transform cubic-bezier(0.16, 1, 0.3, 1); background-color: var(--success); border-radius: 2px; }
+        .schedule-card input[type="checkbox"]:checked { background: rgba(16, 185, 129, 0.2); border-color: var(--success); box-shadow: 0 0 8px rgba(16, 185, 129, 0.4); }
         .schedule-card input[type="checkbox"]:checked::before { transform: scale(1); }
 
         .schedule-info { flex: 1; min-width: 0; }
+        .schedule-time { font-size: 0.68rem; color: var(--warning); font-family: var(--font-mono); font-weight: 700; margin-bottom: 0.15rem; }
+        .schedule-title { font-size: 0.88rem; font-weight: 700; color: var(--text-main); line-height: 1.35; }
 
-        .schedule-time {
-            font-size: 0.72rem;
-            color: var(--warning);
-            font-family: var(--font-mono);
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-        }
+        /* INTERACTIVE ACCORDION DETAILS */
+        .tactical-note { max-height: 0; overflow: hidden; transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); font-size: 0.78rem; color: var(--text-muted); border-left: 2px solid var(--accent-primary); padding-left: 0.65rem; margin-left: 2rem; opacity: 0; font-family: var(--font-mono); line-height: 1.5; width: calc(100% - 2rem); }
+        .schedule-card.expanded .tactical-note, .card-item.expanded .tactical-note { max-height: 300px; margin-top: 0.7rem; margin-bottom: 0.4rem; opacity: 1; }
 
-        .schedule-title {
-            font-size: 0.92rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
+        .grid-cards { display: grid; grid-template-columns: 1fr; gap: 1rem; width: 100%; }
+        @media (min-width: 640px) { .grid-cards { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); } }
+        .card-item { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; transition: var(--transition-fast); width: 100%; min-width: 0; word-break: break-word; cursor: pointer; }
+        .card-item:hover { border-color: var(--border-hover); transform: translateY(-2px); box-shadow: var(--shadow-glow); background: var(--bg-card-hover); }
+        .card-item h3 { font-size: 1rem; color: var(--text-main); font-weight: 800; line-height: 1.3; }
+        .card-item p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
 
-        .tactical-drawer {
-            margin-top: 1.1rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-xl);
-            padding: 1.15rem;
-        }
-
-        .tactical-drawer h3 {
-            font-size: 0.72rem;
-            color: var(--accent-primary);
-            margin-bottom: 0.4rem;
-            text-transform: uppercase;
-            font-family: var(--font-mono);
-            font-weight: 700;
-            letter-spacing: 0.1em;
-        }
-
-        .tactical-drawer p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* GRID CARDS */
-        .grid-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.1rem;
-        }
-
-        @media (min-width: 640px) {
-            .grid-cards { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
-        }
-
-        .card-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-xl);
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.85rem;
-            transition: var(--transition-fast);
-        }
-
-        .card-item:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-glow);
-            background: var(--bg-card-hover);
-        }
-
-        .card-item h3 {
-            font-size: 1.05rem;
-            color: var(--text-main);
-            font-weight: 800;
-        }
-
-        .card-item p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* FLOATING HUD TOUCH BAR FOR MOBILE */
-        .mobile-hud-bar {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            height: 60px;
-            background: var(--bg-surface);
-            backdrop-filter: blur(25px);
-            border-top: 1px solid var(--border-hover);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            z-index: 900;
-            padding: 0 0.5rem;
-        }
-
+        .mobile-hud-bar { position: fixed; bottom: 0; left: 0; right: 0; height: 56px; background: var(--bg-surface); backdrop-filter: blur(25px); border-top: 1px solid var(--border-hover); display: flex; justify-content: space-around; align-items: center; z-index: 900; padding: 0 0.25rem; }
         @media (min-width: 768px) { .mobile-hud-bar { display: none; } }
-
-        .mobile-nav-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2px;
-            font-family: var(--font-mono);
-            font-size: 0.62rem;
-            font-weight: 700;
-            cursor: pointer;
-            padding: 0.4rem;
-        }
-
-        .mobile-nav-btn.active {
-            color: var(--accent-primary);
-            text-shadow: 0 0 10px var(--accent-glow);
-        }
-
-        .mobile-nav-btn svg { width: 18px; height: 18px; stroke: currentColor; }
+        .mobile-nav-btn { background: transparent; border: none; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; gap: 1px; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; cursor: pointer; padding: 0.3rem; flex: 1; }
+        .mobile-nav-btn.active { color: var(--accent-primary); text-shadow: 0 0 8px var(--accent-glow); }
+        .mobile-nav-btn svg { width: 16px; height: 16px; stroke: currentColor; }
     </style>
 </head>
 <body class="dark cyberpunk-cyan">
 
-    <!-- CRT Overlay -->
     <div class="crt-overlay" id="crtOverlay"></div>
-
-    <!-- Moving Background Canvas -->
     <canvas class="cyber-bg-canvas" id="cyberBgCanvas"></canvas>
 
-    <!-- Theme Modal -->
     <div class="modal-backdrop" id="themeModalBackdrop" onclick="toggleThemeModal()">
         <div class="theme-modal" onclick="event.stopPropagation()">
             <h3>
@@ -1064,73 +246,65 @@
                 <div class="theme-option-card" id="theme-card-cyberpunk-cyan" onclick="setTheme('dark', 'cyberpunk-cyan', 'Cyber Cyan')">
                     <div class="theme-preview-dot" style="background: #38bdf8;"></div>
                     <span>Cyber Cyan</span>
-                    <span style="font-size:0.62rem; color:var(--text-dim)">Dark Protocol</span>
+                    <span style="font-size:0.6rem; color:var(--text-dim)">Dark Protocol</span>
                 </div>
                 <div class="theme-option-card" id="theme-card-neon-violet" onclick="setTheme('dark', 'neon-violet', 'Neon Violet')">
                     <div class="theme-preview-dot" style="background: #d946ef;"></div>
                     <span>Neon Violet</span>
-                    <span style="font-size:0.62rem; color:var(--text-dim)">Cyber Dark</span>
+                    <span style="font-size:0.6rem; color:var(--text-dim)">Cyber Dark</span>
                 </div>
                 <div class="theme-option-card" id="theme-card-matrix-green" onclick="setTheme('dark', 'matrix-green', 'Matrix Green')">
                     <div class="theme-preview-dot" style="background: #4ade80;"></div>
                     <span>Matrix Green</span>
-                    <span style="font-size:0.62rem; color:var(--text-dim)">Terminal Dark</span>
+                    <span style="font-size:0.6rem; color:var(--text-dim)">Terminal Dark</span>
                 </div>
                 <div class="theme-option-card" id="theme-card-laser-crimson" onclick="setTheme('dark', 'laser-crimson', 'Laser Crimson')">
                     <div class="theme-preview-dot" style="background: #f87171;"></div>
                     <span>Laser Crimson</span>
-                    <span style="font-size:0.62rem; color:var(--text-dim)">Combat Dark</span>
+                    <span style="font-size:0.6rem; color:var(--text-dim)">Combat Dark</span>
                 </div>
                 <div class="theme-option-card" id="theme-card-solar-amber" onclick="setTheme('dark', 'solar-amber', 'Solar Amber')">
                     <div class="theme-preview-dot" style="background: #fbbf24;"></div>
                     <span>Solar Amber</span>
-                    <span style="font-size:0.62rem; color:var(--text-dim)">Cockpit Dark</span>
+                    <span style="font-size:0.6rem; color:var(--text-dim)">Cockpit Dark</span>
                 </div>
                 <div class="theme-option-card" id="theme-card-light" onclick="setTheme('light', '', 'Pure Light')">
                     <div class="theme-preview-dot" style="background: #0284c7;"></div>
                     <span>Pure Light</span>
-                    <span style="font-size:0.62rem; color:var(--text-dim)">Daylight Mode</span>
+                    <span style="font-size:0.6rem; color:var(--text-dim)">Daylight Mode</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Cybernetic Nav Drawer Overlay -->
     <div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleDrawer()"></div>
     <div class="hud-nav-drawer" id="hudDrawer">
         <div class="drawer-header">// SYSTEM NAVIGATION MATRIX</div>
         <div class="drawer-links">
             <button class="drawer-link" onclick="switchView('landing')">
-                <span>00. Landing Deck</span>
-                <span class="kbd-hint">[1]</span>
+                <span>00. Landing Deck</span><span class="kbd-hint">[1]</span>
             </button>
             <button class="drawer-link active" onclick="switchView('schedule')">
-                <span>01. Schedule & Routine</span>
-                <span class="kbd-hint">[2]</span>
+                <span>01. Schedule & Routine</span><span class="kbd-hint">[2]</span>
             </button>
             <button class="drawer-link" onclick="switchView('books')">
-                <span>02. Book Engine</span>
-                <span class="kbd-hint">[3]</span>
+                <span>02. Book Engine</span><span class="kbd-hint">[3]</span>
             </button>
             <button class="drawer-link" onclick="switchView('metrics')">
-                <span>03. Fitness & Diet</span>
-                <span class="kbd-hint">[4]</span>
+                <span>03. Fitness & Diet</span><span class="kbd-hint">[4]</span>
             </button>
             <button class="drawer-link" onclick="switchView('phases')">
-                <span>04. Two-Year Roadmap</span>
-                <span class="kbd-hint">[5]</span>
+                <span>04. Two-Year Roadmap</span><span class="kbd-hint">[5]</span>
             </button>
         </div>
-        <div style="margin-top:auto; display:flex; flex-direction:column; gap:0.5rem; padding-top:1rem; border-top:1px solid var(--border-subtle);">
+        <div style="margin-top:auto; display:flex; flex-direction:column; gap:0.4rem; padding-top:0.75rem; border-top:1px solid var(--border-subtle);">
             <button class="hud-btn" onclick="toggleCRT()" style="width:100%; justify-content:space-between;">
-                <span>Toggle CRT Filter</span>
-                <span id="crtStatusLabel" class="kbd-hint">ON</span>
+                <span>Toggle CRT Filter</span><span id="crtStatusLabel" class="kbd-hint">ON</span>
             </button>
             <button class="hud-btn" onclick="toggleAudio()" style="width:100%; justify-content:space-between;">
-                <span>Tactical Audio FX</span>
-                <span id="audioStatusLabel" class="kbd-hint">ON</span>
+                <span>Tactical Audio FX</span><span id="audioStatusLabel" class="kbd-hint">ON</span>
             </button>
-            <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim); text-align: center; margin-top:0.5rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); text-align: center; margin-top:0.4rem;">
                 MONK MODE OS // PRO MAX v4.5
             </div>
         </div>
@@ -1138,7 +312,6 @@
 
     <div class="master-container">
 
-        <!-- Master Header Frame -->
         <header id="masterHeader" class="hud-frame" style="display: none;">
             <div class="header-top">
                 <div class="brand-cluster">
@@ -1150,13 +323,11 @@
                 </div>
                 <div class="header-controls">
                     <button class="hud-btn" onclick="toggleThemeModal()">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
                         <span id="currentThemeLabel">Cyber Cyan</span>
                     </button>
                     <button class="hud-btn hud-hamburger-btn" id="hamburgerBtn" onclick="toggleDrawer()" aria-label="Toggle Navigation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span></span><span></span><span></span>
                     </button>
                 </div>
             </div>
@@ -1166,18 +337,17 @@
                     <div id="phaseBadge" class="badge accent"><span class="badge-dot"></span>Phase 1: Foundation</div>
                 </div>
                 <div id="clockDisplay">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                     <span id="clockText">Loading time...</span>
                 </div>
             </div>
         </header>
 
-        <!-- Landing Page View -->
         <div id="view-landing" class="view active">
             <div class="landing-hero hud-frame">
-                <div style="position: absolute; top: 1.25rem; right: 1.25rem;">
+                <div style="position: absolute; top: 1rem; right: 1rem;">
                     <button class="hud-btn" onclick="toggleThemeModal()">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="5"></circle></svg>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="5"></circle></svg>
                         <span id="landingThemeLabel">Themes</span>
                     </button>
                 </div>
@@ -1186,15 +356,14 @@
                     Neural Command Deck Initialized // Multi-Theme Engine
                 </div>
                 <h1 class="hero-title">Master Your Focus. <span>Execute Without Friction.</span></h1>
-                <p class="hero-desc">An ultra-futuristic, ultra-responsive operating system engineered for elite execution, deep work routines, tactical literature tracking, and peak physical conditioning[cite: 1].</p>
+                <p class="hero-desc">An ultra-futuristic, fully responsive operating system engineered for elite execution, deep work routines, tactical literature tracking, and peak physical conditioning.</p>
                 <button class="hero-cta" onclick="switchView('schedule')">
                     <span>LAUNCH COMMAND DECK</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </button>
             </div>
         </div>
 
-        <!-- Schedule & Routine View -->
         <div id="view-schedule" class="view">
             <div class="dashboard-grid">
                 <div class="panel hud-frame">
@@ -1210,87 +379,55 @@
                         </div>
                     </div>
 
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.4rem;">
                         <span class="panel-title" style="margin-bottom:0;">Select Day</span>
-                        <button class="hud-btn" onclick="resetTodayChecks()" style="height:26px; padding:0 0.5rem; font-size:0.65rem;">Reset Checks</button>
+                        <button class="hud-btn" onclick="resetTodayChecks()" style="height:24px; padding:0 0.45rem; font-size:0.62rem;">Reset Checks</button>
                     </div>
                     <div class="day-picker" id="dayPickerContainer"></div>
 
-                    <div class="meta-card" id="bookTrackerSummary" style="margin-top: 1.1rem;"></div>
+                    <div class="meta-card" id="bookTrackerSummary" style="margin-top: 1rem;"></div>
                 </div>
 
                 <div class="panel hud-frame">
                     <div class="panel-title">
                         <span id="activeDayTitle">Schedule Routine</span>
-                        <span id="activeModeLabel" style="color: var(--text-dim); text-transform: none; font-family: var(--font-sans);"></span>
+                        <span id="activeModeLabel" style="color: var(--text-dim); text-transform: none; font-family: var(--font-sans); font-size:0.68rem;"></span>
                     </div>
                     
                     <div class="schedule-container" id="scheduleListContainer"></div>
-
-                    <div class="tactical-drawer">
-                        <h3>Tactical Protocol Instructions</h3>
-                        <p id="drawerDetailText">Select any schedule block above to view operational instructions and nutritional protocols[cite: 1].</p>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Book Engine View -->
         <div id="view-books" class="view">
             <div class="panel hud-frame">
-                <div class="panel-title">Automated Reading Engine // Tactical Sequence</div>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;" id="bookEngineSubtitle">
-                    Tracking the 10-book tactical sequence with automatic 30-day allocations and daily pacing targets[cite: 1].
+                <div class="panel-title">Automated Reading Engine // Tactical Sequence & Brief Notes</div>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;" id="bookEngineSubtitle">
+                    Tracking the 10-book tactical sequence with automatic 30-day allocations and daily pacing targets (~10 pages/day). Tap any book card below to inspect tactical takeaways and structural notes.
                 </p>
                 <div class="grid-cards" id="bookGridContainer"></div>
             </div>
         </div>
 
-        <!-- Fitness & Diet View -->
         <div id="view-metrics" class="view">
             <div class="panel hud-frame">
                 <div class="panel-title">Physical & Nutritional Standards // Optimization Matrix</div>
-                <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.5rem;">
-                    <div class="meta-card">
-                        <div style="font-weight: 700; color: var(--warning); margin-bottom: 0.4rem; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em;">// CADET PILOT BENCHMARKS[cite: 1]</div>
-                        <div style="display: flex; flex-direction: column; gap: 0.35rem;">
-                            <div>• <strong>1.5-Mile Run:</strong> Target under 10:30 minutes[cite: 1]</div>
-                            <div>• <strong>Strict Push-ups:</strong> 40+ consecutive clean repetitions[cite: 1]</div>
-                            <div>• <strong>Core Plank:</strong> 2+ minutes unbroken stabilization hold[cite: 1]</div>
-                        </div>
-                    </div>
-                    <div class="meta-card">
-                        <div style="font-weight: 700; color: var(--warning); margin-bottom: 0.4rem; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em;">// WORKOUT SPLIT ARCHITECTURE[cite: 1]</div>
-                        <div style="display: flex; flex-direction: column; gap: 0.35rem;">
-                            <div>• <strong>Mon / Wed / Fri:</strong> Bodyweight strength, pull-up progressions, push-up pyramids, and Greasing the Groove micro-sets[cite: 1].</div>
-                            <div>• <strong>Tue / Thu / Sat:</strong> Cardio Engine (Zone 2 steady-state runs, 400m high-intensity intervals, timed benchmarks)[cite: 1].</div>
-                            <div>• <strong>Sunday:</strong> Complete active recovery, structural joint mobility, and system reset[cite: 1].</div>
-                        </div>
-                    </div>
-                    <div class="meta-card">
-                        <div style="font-weight: 700; color: var(--warning); margin-bottom: 0.4rem; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em;">// ETHIOPIAN NUTRITIONAL BASELINE[cite: 1]</div>
-                        <div style="display: flex; flex-direction: column; gap: 0.35rem;">
-                            <div>• <strong>Breakfast:</strong> Enkulal Firfir paired with black coffee or spiced tea[cite: 1].</div>
-                            <div>• <strong>Lunch:</strong> Shiro Wot or Misir Wot + 2 whole boiled eggs + fresh Injera[cite: 1].</div>
-                            <div>• <strong>Dinner:</strong> Defen Misir or Kik Wot + Ayib (cottage cheese) + Injera for slow overnight recovery[cite: 1].</div>
-                            <div>• <strong>Performance Snacks:</strong> Kolo (roasted barley) + boiled eggs for sustained energy[cite: 1].</div>
-                        </div>
-                    </div>
-                </div>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    Tap any performance module below to inspect tactical breakdown, benchmarks, workout split rules, and traditional Ethiopian dietary guidelines.
+                </p>
+                <div class="grid-cards" id="fitnessGridContainer"></div>
             </div>
         </div>
 
-        <!-- Roadmap View -->
         <div id="view-phases" class="view">
             <div class="panel hud-frame">
                 <div class="panel-title">Two-Year Execution Roadmap // Strategic Timeline</div>
-                <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.5rem;" id="roadmapContainer"></div>
+                <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-top: 0.4rem;" id="roadmapContainer"></div>
             </div>
         </div>
 
     </div>
 
-    <!-- Mobile HUD Quick Touch Navigation Bar -->
     <div class="mobile-hud-bar">
         <button class="mobile-nav-btn active" id="mob-nav-schedule" onclick="switchView('schedule')">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
@@ -1316,7 +453,7 @@
         const AudioCtx = window.AudioContext || window.webkitAudioContext;
         let audioCtx = null;
 
-        function playBeep(freq = 600, type = 'sine', duration = 0.05) {
+        function playBeep(freq = 600, type = 'sine', duration = 0.04) {
             if (!audioEnabled) return;
             try {
                 if (!audioCtx) audioCtx = new AudioCtx();
@@ -1325,7 +462,7 @@
                 const gain = audioCtx.createGain();
                 osc.type = type;
                 osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-                gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.03, audioCtx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
@@ -1337,7 +474,7 @@
         function toggleAudio() {
             audioEnabled = !audioEnabled;
             document.getElementById('audioStatusLabel').innerText = audioEnabled ? 'ON' : 'OFF';
-            if (audioEnabled) playBeep(800, 'triangle', 0.08);
+            if (audioEnabled) playBeep(800, 'triangle', 0.06);
         }
 
         function toggleCRT() {
@@ -1345,7 +482,7 @@
             crt.classList.toggle('disabled');
             const isActive = !crt.classList.contains('disabled');
             document.getElementById('crtStatusLabel').innerText = isActive ? 'ON' : 'OFF';
-            playBeep(isActive ? 900 : 400, 'sine', 0.06);
+            playBeep(isActive ? 900 : 400, 'sine', 0.05);
         }
 
         /* MOVING BACKGROUND CANVAS */
@@ -1365,9 +502,9 @@
             reset() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.7;
-                this.vy = (Math.random() - 0.5) * 0.7;
-                this.radius = Math.random() * 2 + 1;
+                this.vx = (Math.random() - 0.5) * 0.6;
+                this.vy = (Math.random() - 0.5) * 0.6;
+                this.radius = Math.random() * 1.8 + 0.8;
             }
             update() {
                 this.x += this.vx; this.y += this.vy;
@@ -1378,12 +515,12 @@
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
                 ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent-primary').trim() || '#38bdf8';
-                ctx.globalAlpha = 0.45;
+                ctx.globalAlpha = 0.4;
                 ctx.fill();
             }
         }
 
-        for (let i = 0; i < 50; i++) particles.push(new CyberNode());
+        for (let i = 0; i < 45; i++) particles.push(new CyberNode());
 
         function animateCyberBg() {
             ctx.clearRect(0, 0, width, height);
@@ -1392,10 +529,10 @@
             ctx.lineWidth = 0.5;
 
             const time = Date.now() * 0.001;
-            const gridSize = 65;
-            const offsetY = (time * 12) % gridSize;
+            const gridSize = 60;
+            const offsetY = (time * 10) % gridSize;
 
-            ctx.globalAlpha = 0.05;
+            ctx.globalAlpha = 0.04;
             ctx.beginPath();
             for (let x = 0; x <= width; x += gridSize) { ctx.moveTo(x, 0); ctx.lineTo(x, height); }
             for (let y = offsetY; y <= height; y += gridSize) { ctx.moveTo(0, y); ctx.lineTo(width, y); }
@@ -1407,12 +544,12 @@
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 120) {
+                    if (dist < 110) {
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
                         ctx.strokeStyle = accentColor;
-                        ctx.globalAlpha = (1 - dist / 120) * 0.18;
+                        ctx.globalAlpha = (1 - dist / 110) * 0.15;
                         ctx.stroke();
                     }
                 }
@@ -1431,138 +568,155 @@
         let selectedDay = daysOfWeek[now.getDay()];
 
         const books = [
-            { title: "Mastery (Robert Greene)", focus: "Chapters 5 & 6 (The Creative-Active & Mastery)" },
-            { title: "The Laws of Human Nature (Robert Greene)", focus: "Chapters 2 (Narcissism), 6 (Short-sightedness), & 11 (Envy)" },
-            { title: "Antifragile (Nassim Nicholas Taleb)", focus: "Books I & IV (Building systems that gain from chaos)" },
-            { title: "Finite and Infinite Games (James P. Carse)", focus: "Chapter 1 (Beating boredom in total control)" },
-            { title: "The Logic of Political Survival (Bruce Bueno de Mesquita)", focus: "Chapter 1 (Pure power mechanics)" },
-            { title: "The 33 Strategies of War (Robert Greene)", focus: "Parts IV & V (Offensive & Unconventional Strategy)" },
-            { title: "The Sovereign Individual (Davidson & Rees-Mogg)", focus: "Chapters 1 & 4 (Macro tech & economic trends)" },
-            { title: "Beyond Good and Evil (Friedrich Nietzsche)", focus: "Chapters 1 & 9 (Constructing internal values)" },
-            { title: "The Book of Not Knowing (Peter Ralston)", focus: "Part II (Mechanics of perception & internal illusions)" },
-            { title: "Thinking, Fast and Slow (Daniel Kahneman)", focus: "Parts 1 & 3 (Mapping cognitive bugs)" }
+            { title: "Mastery (Robert Greene)", focus: "Chapters 5 & 6 (The Creative-Active & Mastery)", notes: "Focuses on transitioning from apprenticeship to creative autonomy through deep problem immersion and rigorous pattern recognition." },
+            { title: "The Laws of Human Nature (Robert Greene)", focus: "Chapters 2 (Narcissism), 6 (Short-sightedness), & 11 (Envy)", notes: "Maps psychological blind spots to maintain emotional objectivity and safeguard personal execution from social friction." },
+            { title: "Antifragile (Nassim Nicholas Taleb)", focus: "Books I & IV (Building systems that gain from chaos)", notes: "Architecting robust systems that actually strengthen under volatility, stress, and randomized scheduling pressure." },
+            { title: "Finite and Infinite Games (James P. Carse)", focus: "Chapter 1 (Beating boredom in total control)", notes: "Distinguishes competing to win within rules versus playing to continue the game indefinitely with boundless vision." },
+            { title: "The Logic of Political Survival (Bruce Bueno de Mesquita)", focus: "Chapter 1 (Pure power mechanics)", notes: "Analyzes coalition building, resource distribution incentives, and how institutional leaders retain authority." },
+            { title: "The 33 Strategies of War (Robert Greene)", focus: "Parts IV & V (Offensive & Unconventional Strategy)", notes: "Tactical positioning, asymmetrical engagement, and maintaining psychological composure under high-stakes combat pressure." },
+            { title: "The Sovereign Individual (Davidson & Rees-Mogg)", focus: "Chapters 1 & 4 (Macro tech & economic trends)", notes: "Anticipating macro-economic shifts, digital decentralization, and positioning oneself as an independent economic agent." },
+            { title: "Beyond Good and Evil (Friedrich Nietzsche)", focus: "Chapters 1 & 9 (Constructing internal values)", notes: "Deconstructing conventional morality to forge autonomous internal standards and uncompromising personal discipline." },
+            { title: "The Book of Not Knowing (Peter Ralston)", focus: "Part II (Mechanics of perception & internal illusions)", notes: "Examining the mechanics of consciousness, shedding preconceptions, and cultivating absolute clarity of perception." },
+            { title: "Thinking, Fast and Slow (Daniel Kahneman)", focus: "Parts 1 & 3 (Mapping cognitive bugs)", notes: "Identifying mental heuristics, system 1 vs system 2 biases, and neutralizing irrational decision-making under stress." }
+        ];
+
+        const fitnessModules = [
+            { title: "1.5-Mile Run (Target < 10:30)", subtitle: "Aerobic threshold & pacing benchmark", notes: "Pacing strategy requires maintaining a consistent 7:00/mile split through controlled cadence, nasal breathing techniques, and lung capacity expansion." },
+            { title: "Strict Push-ups (Target 40+ reps)", subtitle: "Upper body strength endurance", notes: "Unbroken execution with full lockouts at the top and chest hovering 2 inches above ground at the bottom. Zero hip sag or momentum cheating." },
+            { title: "Core Plank (Target 2+ mins)", subtitle: "Transverse abdominis stabilization", notes: "Posterior pelvic tilt, glutes fully squeezed, ribs locked down to eliminate lower back lumbar strain during prolonged holds." },
+            { title: "Workout Split: Strength (Mon / Wed / Fri)", subtitle: "Bodyweight & Greasing the Groove", notes: "Focus on push-up pyramids and pull-up progressions. Apply 'Greasing the Groove' (GtG) during class transitions by executing sub-maximal sets throughout the day to build neural pathways without fatigue." },
+            { title: "Workout Split: Cardio Engine (Tue / Thu / Sat)", subtitle: "Aerobic & Interval Conditioning", notes: "Tuesday Zone 2 steady runs (45m aerobic base); Thursday 400m high-intensity intervals (VO2 max output); Saturday timed 1.5-mile benchmark simulation." },
+            { title: "Workout Split: Sunday Recovery", subtitle: "Active mobility & CNS reset", notes: "Complete structural joint mobility, foam rolling, dynamic stretching, and central nervous system decompression to prepare for the weekly cycle." },
+            { title: "Ethiopian Breakfast Baseline", subtitle: "Clean morning focus & energy", notes: "Enkulal Firfir (scrambled eggs spiced with onions, tomatoes, and berbere) paired with black coffee or spiced tea for clean morning focus." },
+            { title: "Ethiopian Lunch Baseline", subtitle: "Complex carbs & amino acids", notes: "Shiro Wot or Misir Wot accompanied by 2 whole boiled eggs and fresh Injera for complex carbohydrates and sustained amino acid delivery." },
+            { title: "Ethiopian Dinner Baseline", subtitle: "Slow-digesting overnight repair", notes: "Defen Misir or Kik Wot paired with Ayib (traditional cottage cheese) and Injera to provide slow-digesting proteins for overnight tissue repair." },
+            { title: "Performance Snacks", subtitle: "Micronutrients & quick fuel", notes: "Roasted Kolo (barley) and boiled eggs for quick micronutrients and sustained energy between intensive study blocks." }
         ];
 
         const schedules = {
             NonClass: {
                 Monday: [
-                    { time: "05:30 - 07:30", title: "Morning Reset, Conditioning & Active English", detail: "Protocol: Push-up pyramid targeting 40+ strict reps. Active reading aloud in English to eliminate hesitation[cite: 1]." },
-                    { time: "07:30 - 12:30", title: "Deep Work: CS Algorithms & Architecture", detail: "Protocol: Uninterrupted deep work blocks. Implement Greasing the Groove push-ups between intense coding periods[cite: 1]." },
-                    { time: "12:30 - 13:30", title: "High-Protein Lunch & Diffuse Walk", detail: "Protocol: Shiro Wot / Misir Wot + 2 boiled eggs + Injera. Phone-free outdoor walk for subconscious problem solving[cite: 1]." },
-                    { time: "13:30 - 16:30", title: "Applied Coding & Data Structures", detail: "Protocol: Rigorous implementation of university data structures and backend logic scripts[cite: 1]." },
-                    { time: "16:30 - 18:00", title: "Active English Output & Mobility", detail: "Protocol: Record a 15-minute audio log explaining technical CS or aviation concepts in fluent English. Core mobility drills[cite: 1]." },
-                    { time: "18:00 - 21:00", title: "Dinner, Metrics Review & Sleep Prep", detail: "Protocol: Defen Misir / Kik Wot + Ayib + Injera. Review daily log metrics. Strict lights out by 21:30[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Morning Reset, Conditioning & Active English", detail: "Push-up pyramid targeting 40+ strict reps. Active reading aloud in English to eliminate hesitation. Read ~5 pages of current book." },
+                    { time: "07:30 - 12:30", title: "Deep Work: CS Algorithms & Architecture", detail: "Uninterrupted deep work blocks. Implement Greasing the Groove push-ups between intense coding periods." },
+                    { time: "12:30 - 13:30", title: "High-Protein Lunch & Diffuse Walk", detail: "Shiro Wot / Misir Wot + 2 boiled eggs + Injera. Phone-free outdoor walk for subconscious problem solving." },
+                    { time: "13:30 - 16:30", title: "Applied Coding & Data Structures", detail: "Rigorous implementation of university data structures and backend logic scripts." },
+                    { time: "16:30 - 18:00", title: "Active English Output & Mobility", detail: "Record a 15-minute audio log explaining technical CS or aviation concepts in fluent English. Core mobility drills." },
+                    { time: "18:00 - 21:00", title: "Dinner, Metrics Review & Sleep Prep", detail: "Defen Misir / Kik Wot + Ayib + Injera. Review daily log metrics. Read ~5 pages of current book. Strict lights out by 21:30." }
                 ],
                 Tuesday: [
-                    { time: "05:30 - 07:30", title: "Cardio Engine: Zone 2 Run & Sprints", detail: "Protocol: 45-minute Zone 2 baseline run targeting sub-10:30 pace for 1.5 miles. Post-run stretch[cite: 1]." },
-                    { time: "07:30 - 12:30", title: "Deep Work: University CS & Systems", detail: "Protocol: High-focus backend systems programming. Zero notifications, dedicated workflow blocks[cite: 1]." },
-                    { time: "12:30 - 13:30", title: "High-Protein Lunch & Hydration", detail: "Protocol: Shiro Wot + 2 boiled eggs + Injera. Complete offline reset[cite: 1]." },
-                    { time: "13:30 - 16:30", title: "Technical Architecture & Study", detail: "Protocol: Algorithm problem solving and data structure optimization[cite: 1]." },
-                    { time: "16:30 - 18:00", title: "English Fluency Drills & Vocabulary", detail: "Protocol: Read complex technical documentation aloud; master aerospace terminology[cite: 1]." },
-                    { time: "18:00 - 21:00", title: "Dinner & Recovery Protocol", detail: "Protocol: Defen Misir + Ayib + Injera. Journal reflection and early lights out[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Cardio Engine: Zone 2 Run & Sprints", detail: "45-minute Zone 2 baseline run targeting sub-10:30 pace for 1.5 miles. Post-run stretch. English podcast while running." },
+                    { time: "07:30 - 12:30", title: "Deep Work: University CS & Systems", detail: "High-focus backend systems programming. Zero notifications, dedicated workflow blocks." },
+                    { time: "12:30 - 13:30", title: "High-Protein Lunch & Hydration", detail: "Shiro Wot + 2 boiled eggs + Injera. Complete offline reset and diffuse walking." },
+                    { time: "13:30 - 16:30", title: "Technical Architecture & Study", detail: "Algorithm problem solving and data structure optimization." },
+                    { time: "16:30 - 18:00", title: "English Fluency Drills & Vocabulary", detail: "Read complex technical documentation aloud; master aerospace terminology." },
+                    { time: "18:00 - 21:00", title: "Dinner & Recovery Protocol", detail: "Defen Misir + Ayib + Injera. Journal reflection, 10 pages reading target, and early lights out." }
                 ],
                 Wednesday: [
-                    { time: "05:30 - 07:30", title: "Morning Reset & Strength Builder", detail: "Protocol: Push-up pyramids, pull-up progressions, and core stabilization routines[cite: 1]." },
-                    { time: "07:30 - 12:30", title: "Deep Work: Core CS Studies", detail: "Protocol: Deep focus on algorithms and operating systems architecture[cite: 1]." },
-                    { time: "12:30 - 13:30", title: "Midday Meal & Walk", detail: "Protocol: Traditional high-protein lunch with walking interval[cite: 1]." },
-                    { time: "13:30 - 16:30", title: "Programming Practice", detail: "Protocol: Coding logic implementation and debugging test suites[cite: 1]." },
-                    { time: "16:30 - 18:00", title: "Language Immersion & Mobility", detail: "Protocol: Audio logging and stretching routines[cite: 1]." },
-                    { time: "18:00 - 21:00", title: "Dinner & System Review", detail: "Protocol: Nutrition intake, log checking, and next-day prep[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Morning Reset & Strength Builder", detail: "Push-up pyramids, pull-up progressions, and core stabilization routines." },
+                    { time: "07:30 - 12:30", title: "Deep Work: Core CS Studies", detail: "Deep focus on algorithms and operating systems architecture. GtG method during transitions." },
+                    { time: "12:30 - 13:30", title: "Midday Meal & Walk", detail: "Traditional high-protein lunch with walking interval. No screens." },
+                    { time: "13:30 - 16:30", title: "Programming Practice", detail: "Coding logic implementation and debugging test suites." },
+                    { time: "16:30 - 18:00", title: "Language Immersion & Mobility", detail: "Audio logging and stretching routines. Record 15 min explanation." },
+                    { time: "18:00 - 21:00", title: "Dinner & System Review", detail: "Nutrition intake, log checking, 10-page book engine reading, and next-day prep." }
                 ],
                 Thursday: [
-                    { time: "05:30 - 07:30", title: "Cardio Engine: Interval Training", detail: "Protocol: High-intensity interval sprints and endurance building[cite: 1]." },
-                    { time: "07:30 - 12:30", title: "Deep Work: Advanced CS Systems", detail: "Protocol: Uninterrupted problem solving and technical implementation[cite: 1]." },
-                    { time: "12:30 - 13:30", title: "Lunch & Mental Reset", detail: "Protocol: High-protein meal paired with offline decompression[cite: 1]." },
-                    { time: "13:30 - 16:30", title: "Academic Focus & Project Work", detail: "Protocol: University curriculum tasks and software development[cite: 1]." },
-                    { time: "16:30 - 18:00", title: "English Communication Practice", detail: "Protocol: Advanced articulation drills and technical vocabulary practice[cite: 1]." },
-                    { time: "18:00 - 21:00", title: "Evening Meal & Wind Down", detail: "Protocol: Clean nutrition and sleep preparation[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Cardio Engine: Interval Training", detail: "High-intensity interval sprints (400m) and endurance building. Listen to English podcast." },
+                    { time: "07:30 - 12:30", title: "Deep Work: Advanced CS Systems", detail: "Uninterrupted problem solving and technical implementation." },
+                    { time: "12:30 - 13:30", title: "Lunch & Mental Reset", detail: "High-protein meal paired with offline decompression outdoors." },
+                    { time: "13:30 - 16:30", title: "Academic Focus & Project Work", detail: "University curriculum tasks and software development modules." },
+                    { time: "16:30 - 18:00", title: "English Communication Practice", detail: "Advanced articulation drills and technical vocabulary practice." },
+                    { time: "18:00 - 21:00", title: "Evening Meal & Wind Down", detail: "Clean nutrition (Defen Misir + Ayib), 10 pages reading, sleep preparation." }
                 ],
                 Friday: [
-                    { time: "05:30 - 07:30", title: "Morning Conditioning & Review", detail: "Protocol: Final strength block of the work week. Push-ups and core endurance[cite: 1]." },
-                    { time: "07:30 - 12:30", title: "Deep Work: Final Weekly Push", detail: "Protocol: Completing major coding milestones and reading objectives[cite: 1]." },
-                    { time: "12:30 - 13:30", title: "Lunch & Midday Walk", detail: "Protocol: Nutrient-dense meal with zero screen time[cite: 1]." },
-                    { time: "13:30 - 16:30", title: "Systems Implementation", detail: "Protocol: Finalizing software modules and tracking logs[cite: 1]." },
-                    { time: "16:30 - 18:00", title: "Language Review & Stretching", detail: "Protocol: Comprehensive English fluency recording and flexibility work[cite: 1]." },
-                    { time: "18:00 - 21:00", title: "Dinner & Weekly Wrap-up", detail: "Protocol: Reviewing weekly execution metrics and prepping the weekend[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Morning Conditioning & Review", detail: "Final strength block of the work week. Push-ups and core endurance." },
+                    { time: "07:30 - 12:30", title: "Deep Work: Final Weekly Push", detail: "Completing major coding milestones and objective checkpoints." },
+                    { time: "12:30 - 13:30", title: "Lunch & Midday Walk", detail: "Nutrient-dense meal with zero screen time. Hydration focus." },
+                    { time: "13:30 - 16:30", title: "Systems Implementation", detail: "Finalizing software modules and backing up logic scripts." },
+                    { time: "16:30 - 18:00", title: "Language Review & Stretching", detail: "Comprehensive English fluency recording and deep flexibility work." },
+                    { time: "18:00 - 21:00", title: "Dinner & Weekly Wrap-up", detail: "Reviewing weekly execution metrics. 10 pages book engine. Prep the weekend." }
                 ],
                 Saturday: [
-                    { time: "07:00 - 09:00", title: "Endurance Benchmark Run", detail: "Protocol: Timed 1.5-mile run and full physical standard check[cite: 1]." },
-                    { time: "09:00 - 13:00", title: "Deep Reading & Tactical Study", detail: "Protocol: Dedicated focus on current book engine milestones[cite: 1]." },
-                    { time: "13:00 - 14:00", title: "Lunch & Recovery", detail: "Protocol: Traditional meal and complete mental break[cite: 1]." },
-                    { time: "14:00 - 18:00", title: "Personal Project & Code Architecture", detail: "Protocol: Long-term software engineering and system building[cite: 1]." },
-                    { time: "18:00 - 21:00", title: "Evening Reset & Rest", detail: "Protocol: Light reading and preparation for Sunday recovery[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Endurance Benchmark Run", detail: "Timed 1.5-mile run. Full physical standard check." },
+                    { time: "07:30 - 12:30", title: "Deep Reading & Tactical Study", detail: "Dedicated focus on current book engine milestones. Extra reading to get ahead on the 30-day block." },
+                    { time: "12:30 - 13:30", title: "Lunch & Recovery", detail: "Traditional high-protein meal and complete mental break outdoors." },
+                    { time: "13:30 - 16:30", title: "Personal Project & Code Architecture", detail: "Long-term software engineering, system building, and creative coding." },
+                    { time: "16:30 - 18:00", title: "Passive English Immersion", detail: "Long walks with aviation/tech podcasts." },
+                    { time: "18:00 - 21:00", title: "Evening Reset & Rest", detail: "Dinner, light reading, and preparation for Sunday recovery. Sleep strictly by 21:30." }
                 ],
                 Sunday: [
-                    { time: "08:00 - 10:00", title: "Active Recovery & Mobility", detail: "Protocol: Joint mobility, stretching, and physical system reset[cite: 1]." },
-                    { time: "10:00 - 13:00", title: "Strategic Review & Planning", detail: "Protocol: Reviewing the past week, updating metrics, and planning the upcoming schedule[cite: 1]." },
-                    { time: "13:00 - 14:00", title: "Midday Meal", detail: "Protocol: Clean, high-protein traditional meal[cite: 1]." },
-                    { time: "14:00 - 18:00", title: "Deep Reading & Rest", detail: "Protocol: Unwinding with tactical literature and offline relaxation[cite: 1]." },
-                    { time: "18:00 - 21:00", title: "Sleep Prep & Early Rest", detail: "Protocol: Complete wind-down for peak performance on Monday morning[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Active Recovery & Mobility", detail: "Joint mobility, deep tissue stretching, and physical system reset." },
+                    { time: "07:30 - 12:30", title: "Strategic Review & Planning", detail: "Review the past week, audit metrics (GPA, Fitness, Book). Plan upcoming schedule blocks." },
+                    { time: "12:30 - 13:30", title: "Midday Meal", detail: "Clean, high-protein traditional meal. No screens." },
+                    { time: "13:30 - 16:30", title: "Deep Reading & Reset", detail: "Unwinding with tactical literature (hit weekly page targets) and offline relaxation." },
+                    { time: "16:30 - 18:00", title: "Leisure & System Update", detail: "Free time, system upgrades, calling family." },
+                    { time: "18:00 - 21:00", title: "Sleep Prep & Early Rest", detail: "Complete wind-down for peak performance on Monday morning. Early lights out." }
                 ]
             },
             ClassIntegration: {
                 Monday: [
-                    { time: "06:00 - 07:30", title: "Morning Conditioning & English", detail: "Protocol: Rapid push-up set and active English speaking practice[cite: 1]." },
-                    { time: "08:00 - 13:00", title: "University Classes & Lectures", detail: "Protocol: Active engagement, note-taking, and in-person focus[cite: 1]." },
-                    { time: "13:00 - 14:00", title: "Campus Lunch & Walk", detail: "Protocol: High-protein meal with a short walk outside[cite: 1]." },
-                    { time: "14:00 - 17:00", title: "Library Deep Work", detail: "Protocol: Focused study on CS modules and assignments[cite: 1]." },
-                    { time: "17:00 - 19:00", title: "Commute & Physical Reset", detail: "Protocol: Transition home, light core work, and hydration[cite: 1]." },
-                    { time: "19:00 - 21:00", title: "Dinner & Review", detail: "Protocol: Traditional meal, metric tracking, and sleep prep[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Morning Conditioning & English", detail: "Rapid push-up set (GtG) and active English speaking practice. Hit 5 pages of reading." },
+                    { time: "07:30 - 12:30", title: "University Classes & Lectures", detail: "Active engagement, note-taking, and in-person focus. Sneak in push-ups between classes." },
+                    { time: "12:30 - 13:30", title: "Campus Lunch & Walk", detail: "High-protein meal with a short walk outside. Diffuse thinking." },
+                    { time: "13:30 - 16:30", title: "Library Deep Work", detail: "Focused study on CS modules, assignments, and reinforcing morning lectures." },
+                    { time: "16:30 - 18:00", title: "Commute & Physical Reset", detail: "Transition home, listen to English podcasts, light core work upon arrival." },
+                    { time: "18:00 - 21:00", title: "Dinner & Review", detail: "Traditional meal, metric tracking, hit remaining 5 pages for book engine. Sleep prep." }
                 ],
                 Tuesday: [
-                    { time: "06:00 - 07:00", title: "Morning Cardio Run", detail: "Protocol: Quick interval session or baseline conditioning[cite: 1]." },
-                    { time: "08:00 - 13:00", title: "University Classes", detail: "Protocol: Rigorous attendance and academic tracking[cite: 1]." },
-                    { time: "13:00 - 14:00", title: "Lunch & Reset", detail: "Protocol: Clean nutrition and offline recharge[cite: 1]." },
-                    { time: "14:00 - 17:00", title: "CS Lab & Practical Work", detail: "Protocol: Hands-on programming and software building[cite: 1]." },
-                    { time: "17:00 - 19:00", title: "English Fluency Drill", detail: "Protocol: Speaking practice and vocabulary retention[cite: 1]." },
-                    { time: "19:00 - 21:00", title: "Dinner & Rest", detail: "Protocol: Evening meal and early lights out[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Morning Cardio Run", detail: "Quick 45m Zone 2 interval session or baseline conditioning." },
+                    { time: "07:30 - 12:30", title: "University Classes", detail: "Rigorous attendance and academic tracking. Sit in front, engage actively." },
+                    { time: "12:30 - 13:30", title: "Lunch & Reset", detail: "Clean nutrition (Shiro + Eggs) and offline recharge." },
+                    { time: "13:30 - 16:30", title: "CS Lab & Practical Work", detail: "Hands-on programming and software building. Group work if necessary." },
+                    { time: "16:30 - 18:00", title: "English Fluency Drill", detail: "Record 15 min speaking practice and vocabulary retention." },
+                    { time: "18:00 - 21:00", title: "Dinner & Rest", detail: "Evening meal (Defen Misir), 10 pages reading, and early lights out." }
                 ],
                 Wednesday: [
-                    { time: "06:00 - 07:30", title: "Strength & Conditioning", detail: "Protocol: Push-up pyramids and core endurance[cite: 1]." },
-                    { time: "08:00 - 13:00", title: "University Classes", detail: "Protocol: Focused lecture attendance[cite: 1]." },
-                    { time: "13:00 - 14:00", title: "Lunch Break", detail: "Protocol: Traditional high-protein meal[cite: 1]." },
-                    { time: "14:00 - 17:00", title: "Library Study Block", detail: "Protocol: Algorithm and data structure review[cite: 1]." },
-                    { time: "17:00 - 19:00", title: "Mobility & Stretch", detail: "Protocol: Flexibility routine[cite: 1]." },
-                    { time: "19:00 - 21:00", title: "Dinner & Prep", detail: "Protocol: Nutrition and sleep scheduling[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Strength & Conditioning", detail: "Push-up pyramids and core endurance. Active reading out loud." },
+                    { time: "07:30 - 12:30", title: "University Classes", detail: "Focused lecture attendance. Maintain high GPA targets." },
+                    { time: "12:30 - 13:30", title: "Lunch Break", detail: "Traditional high-protein meal. Outdoor mental break." },
+                    { time: "13:30 - 16:30", title: "Library Study Block", detail: "Algorithm and data structure review. Code implementation." },
+                    { time: "16:30 - 18:00", title: "Mobility & Stretch", detail: "Flexibility routine and physical cool-down." },
+                    { time: "18:00 - 21:00", title: "Dinner & Prep", detail: "Nutrition, 10 pages tactical reading, sleep scheduling." }
                 ],
                 Thursday: [
-                    { time: "06:00 - 07:00", title: "Cardio & Endurance", detail: "Protocol: Zone 2 running session[cite: 1]." },
-                    { time: "08:00 - 13:00", title: "University Classes", detail: "Protocol: Active academic engagement[cite: 1]." },
-                    { time: "13:00 - 14:00", title: "Lunch", detail: "Protocol: Traditional meal and walk[cite: 1]." },
-                    { time: "14:00 - 17:00", title: "Coding & Projects", detail: "Protocol: Software engineering practice[cite: 1]." },
-                    { time: "17:00 - 19:00", title: "Language Practice", detail: "Protocol: Technical reading aloud[cite: 1]." },
-                    { time: "19:00 - 21:00", title: "Dinner & Wind Down", detail: "Protocol: Clean recovery and rest[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Cardio & Endurance", detail: "400m HIIT sprints. Build aerobic engine." },
+                    { time: "07:30 - 12:30", title: "University Classes", detail: "Active academic engagement. Push-ups between blocks." },
+                    { time: "12:30 - 13:30", title: "Lunch", detail: "Traditional meal and walk." },
+                    { time: "13:30 - 16:30", title: "Coding & Projects", detail: "Software engineering practice and labs." },
+                    { time: "16:30 - 18:00", title: "Language Practice", detail: "Technical reading aloud in English. Audio logging." },
+                    { time: "18:00 - 21:00", title: "Dinner & Wind Down", detail: "Clean recovery, 10 pages reading, rest." }
                 ],
                 Friday: [
-                    { time: "06:00 - 07:30", title: "Morning Conditioning", detail: "Protocol: Final weekday workout[cite: 1]." },
-                    { time: "08:00 - 13:00", title: "University Classes", detail: "Protocol: Final academic push for the week[cite: 1]." },
-                    { time: "13:00 - 14:00", title: "Lunch", detail: "Protocol: High-protein nutrition[cite: 1]." },
-                    { time: "14:00 - 17:00", title: "Review & Wrap Up", detail: "Protocol: Completing weekly tasks[cite: 1]." },
-                    { time: "17:00 - 19:00", title: "Transition & Rest", detail: "Protocol: Unwinding from classes[cite: 1]." },
-                    { time: "19:00 - 21:00", title: "Dinner & Weekend Prep", detail: "Protocol: Meal prep and review[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Morning Conditioning", detail: "Final weekday bodyweight workout. Push-up volume." },
+                    { time: "07:30 - 12:30", title: "University Classes", detail: "Final academic push for the week. Solidify concepts." },
+                    { time: "12:30 - 13:30", title: "Lunch", detail: "High-protein nutrition. Unwind." },
+                    { time: "13:30 - 16:30", title: "Review & Wrap Up", detail: "Completing weekly tasks and assignments early." },
+                    { time: "16:30 - 18:00", title: "Transition & Rest", detail: "Unwinding from classes, mobility." },
+                    { time: "18:00 - 21:00", title: "Dinner & Weekend Prep", detail: "Meal prep, review metrics, 10 pages reading." }
                 ],
                 Saturday: [
-                    { time: "07:00 - 09:00", title: "Benchmark Fitness", detail: "Protocol: 1.5-mile run and physical test[cite: 1]." },
-                    { time: "09:00 - 13:00", title: "Deep Reading Engine", detail: "Protocol: Tactical literature study[cite: 1]." },
-                    { time: "13:00 - 14:00", title: "Lunch", detail: "Protocol: Traditional meal[cite: 1]." },
-                    { time: "14:00 - 18:00", title: "Personal Projects", detail: "Protocol: Coding and system development[cite: 1]." },
-                    { time: "18:00 - 21:00", title: "Evening Rest", detail: "Protocol: Offline relaxation[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Benchmark Fitness", detail: "1.5-mile run check. Target sub 10:30." },
+                    { time: "07:30 - 12:30", title: "Deep Reading Engine", detail: "Tactical literature study. Catch up on weekly page counts." },
+                    { time: "12:30 - 13:30", title: "Lunch", detail: "Traditional meal." },
+                    { time: "13:30 - 16:30", title: "Personal Projects", detail: "Coding and system development beyond class requirements." },
+                    { time: "16:30 - 18:00", title: "English Podcasts", detail: "Active listening while walking." },
+                    { time: "18:00 - 21:00", title: "Evening Rest", detail: "Offline relaxation and early sleep." }
                 ],
                 Sunday: [
-                    { time: "08:00 - 10:00", title: "Active Recovery", detail: "Protocol: Stretching and mobility drills[cite: 1]." },
-                    { time: "10:00 - 13:00", title: "Weekly Planning", detail: "Protocol: Schedule review and metric audit[cite: 1]." },
-                    { time: "13:00 - 14:00", title: "Lunch", detail: "Protocol: Clean nutrition[cite: 1]." },
-                    { time: "14:00 - 18:00", title: "Reading & Reset", detail: "Protocol: Tactical book engine[cite: 1]." },
-                    { time: "18:00 - 21:00", title: "Sleep Prep", detail: "Protocol: Early rest for the new week[cite: 1]." }
+                    { time: "05:30 - 07:30", title: "Active Recovery", detail: "Stretching and mobility drills." },
+                    { time: "07:30 - 12:30", title: "Weekly Planning", detail: "Schedule review and metric audit. Prep for the week." },
+                    { time: "12:30 - 13:30", title: "Lunch", detail: "Clean nutrition." },
+                    { time: "13:30 - 16:30", title: "Reading & Reset", detail: "Tactical book engine focus." },
+                    { time: "16:30 - 18:00", title: "Leisure", detail: "Reset the mind." },
+                    { time: "18:00 - 21:00", title: "Sleep Prep", detail: "Early rest for the new week." }
                 ]
             }
         };
 
         const phases = [
-            { title: "Phase 1: Foundation (Months 1–6)", desc: "Establish daily discipline, recover CS GPA baseline, master 1.5-mile run under 10:30, and complete core tactical reading list[cite: 1]." },
-            { title: "Phase 2: Acceleration (Months 7–12)", desc: "Intensify software portfolio development, flight physics study, English articulation, and physical stamina peaking[cite: 1]." },
-            { title: "Phase 3: Integration (Months 13–18)", desc: "Simulated aptitude and psychometric testing mastery, interview simulations, and peak physical conditioning[cite: 1]." },
-            { title: "Phase 4: Execution & Deployment (Months 19–24)", desc: "Final cadet application submission, assessment prep, and flawless execution[cite: 1]." }
+            { title: "Phase 1: Foundation (Months 1–6)", desc: "Establish daily discipline, recover CS GPA baseline, master 1.5-mile run under 10:30, and complete core tactical reading list." },
+            { title: "Phase 2: Acceleration (Months 7–12)", desc: "Intensify software portfolio development, flight physics study, English articulation, and physical stamina peaking." },
+            { title: "Phase 3: Integration (Months 13–18)", desc: "Simulated aptitude and psychometric testing mastery, interview simulations, and peak physical conditioning." },
+            { title: "Phase 4: Execution & Deployment (Months 19–24)", desc: "Final cadet application submission, assessment prep, and flawless execution." }
         ];
 
         /* KEYBOARD NAVIGATION ACCELERATOR */
@@ -1583,7 +737,7 @@
         });
 
         function toggleDrawer() {
-            playBeep(700, 'sine', 0.04);
+            playBeep(700, 'sine', 0.03);
             const drawer = document.getElementById('hudDrawer');
             const backdrop = document.getElementById('drawerBackdrop');
             const btn = document.getElementById('hamburgerBtn');
@@ -1593,13 +747,13 @@
         }
 
         function toggleThemeModal() {
-            playBeep(750, 'sine', 0.04);
+            playBeep(750, 'sine', 0.03);
             const modal = document.getElementById('themeModalBackdrop');
             modal.classList.toggle('open');
         }
 
         function setTheme(modeClass, themeClass, themeName) {
-            playBeep(900, 'square', 0.05);
+            playBeep(900, 'square', 0.04);
             document.documentElement.className = `${modeClass} ${themeClass}`;
             localStorage.setItem('monk_mode_theme_mode', modeClass);
             localStorage.setItem('monk_mode_theme_class', themeClass);
@@ -1626,7 +780,7 @@
         }
 
         function switchView(viewName) {
-            playBeep(650, 'sine', 0.04);
+            playBeep(650, 'sine', 0.03);
             document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
             const header = document.getElementById('masterHeader');
             if (viewName === 'landing') header.style.display = 'none';
@@ -1689,14 +843,21 @@
             const currentDayIndex = now.getDay();
             const isToday = selectedDay === daysOfWeek[currentDayIndex];
             
+            let scrolled = false;
+
             currentRoutine.forEach((item, index) => {
                 const card = document.createElement('div');
                 card.className = 'schedule-card';
 
-                if (isToday) {
-                    const [startStr] = item.time.split(' - ');
-                    const startHour = parseInt(startStr.split(':')[0], 10);
-                    if (currentHour === startHour) card.classList.add('current');
+                const [startStr] = item.time.split(' - ');
+                const startHour = parseInt(startStr.split(':')[0], 10);
+                
+                if (isToday && currentHour === startHour) {
+                    card.classList.add('current');
+                    if(!scrolled) {
+                        setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 400);
+                        scrolled = true;
+                    }
                 }
                 
                 const checkboxId = `chk_${selectedDay}_${index}`;
@@ -1704,16 +865,23 @@
                 if(isChecked) card.style.opacity = '0.5';
 
                 card.innerHTML = `
-                    <input type="checkbox" id="${checkboxId}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation(); toggleCheck('${checkboxId}')">
-                    <div class="schedule-info">
-                        <div class="schedule-time">${item.time}</div>
-                        <div class="schedule-title">${item.title}</div>
+                    <div class="schedule-card-header">
+                        <input type="checkbox" id="${checkboxId}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation(); toggleCheck('${checkboxId}')">
+                        <div class="schedule-info">
+                            <div class="schedule-time">${item.time}</div>
+                            <div class="schedule-title">${item.title}</div>
+                        </div>
                     </div>
+                    <div class="tactical-note">${item.detail}</div>
                 `;
 
                 card.onclick = () => {
                     playBeep(550, 'sine', 0.03);
-                    document.getElementById('drawerDetailText').innerText = item.detail;
+                    const wasExpanded = card.classList.contains('expanded');
+                    document.querySelectorAll('.schedule-card').forEach(c => c.classList.remove('expanded'));
+                    if (!wasExpanded) {
+                        card.classList.add('expanded');
+                    }
                 };
 
                 listContainer.appendChild(card);
@@ -1724,14 +892,14 @@
         }
 
         function toggleCheck(id) {
-            playBeep(850, 'triangle', 0.05);
+            playBeep(850, 'triangle', 0.04);
             const chk = document.getElementById(id);
             localStorage.setItem(id, chk.checked);
             renderSchedule();
         }
 
         function resetTodayChecks() {
-            playBeep(300, 'sawtooth', 0.08);
+            playBeep(300, 'sawtooth', 0.06);
             const currentRoutine = schedules[currentModeKey][selectedDay] || [];
             currentRoutine.forEach((_, index) => {
                 localStorage.removeItem(`chk_${selectedDay}_${index}`);
@@ -1755,26 +923,26 @@
 
         function renderBookSummary() {
             const diffDays = Math.floor((now - PHASE_START_DATE) / (1000 * 60 * 60 * 24));
-            const currentBookIndex = Math.floor(Math.max(0, diffDays) / 30) % books.length;
+            const activeDays = Math.max(0, diffDays);
+            const currentBookIndex = Math.floor(activeDays / 30) % books.length;
             const activeBook = books[currentBookIndex];
-            const daysInCurrentBook = Math.max(0, diffDays) % 30;
+            const daysInCurrentBook = activeDays % 30;
             const daysLeft = 30 - daysInCurrentBook;
 
             const sumContainer = document.getElementById('bookTrackerSummary');
             sumContainer.innerHTML = `
-                <div style="font-weight: 700; color: var(--accent-primary); margin-bottom: 0.35rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing:0.05em;">// ACTIVE READING ENGINE</div>
-                <div style="font-size:0.9rem; font-weight:700; color:var(--text-main); margin-bottom:0.2rem;">${activeBook.title}</div>
-                <div>Day ${daysInCurrentBook + 1} of 30 // ${daysLeft} days remaining. Focus: ${activeBook.focus}[cite: 1]</div>
+                <div style="font-weight: 700; color: var(--accent-primary); margin-bottom: 0.3rem; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing:0.05em;">// ACTIVE READING ENGINE</div>
+                <div style="font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:0.15rem;">${activeBook.title}</div>
+                <div style="font-size: 0.78rem;">Day ${daysInCurrentBook + 1} of 30 // ${daysLeft} days remaining. Target: 10 pages/day.</div>
             `;
         }
 
         function renderBooks() {
             const container = document.getElementById('bookGridContainer');
             const diffDays = Math.floor((now - PHASE_START_DATE) / (1000 * 60 * 60 * 24));
-            const currentBookIndex = Math.floor(Math.max(0, diffDays) / 30) % books.length;
+            const activeDays = Math.max(0, diffDays);
+            const currentBookIndex = Math.floor(activeDays / 30) % books.length;
             
-            document.getElementById('bookEngineSubtitle').innerText = `Tracking the 10-book sequence with automated 30-day allocations[cite: 1]. Active target: Book 0${currentBookIndex + 1}.`;
-
             container.innerHTML = '';
             books.forEach((b, idx) => {
                 const card = document.createElement('div');
@@ -1784,36 +952,92 @@
                     card.style.background = 'var(--accent-glow)';
                 }
                 card.innerHTML = `
-                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: ${idx === currentBookIndex ? 'var(--accent-primary)' : 'var(--warning)'};">// BOOK 0${idx+1} // 30-DAY BLOCK ${idx === currentBookIndex ? '(ACTIVE)' : ''}</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: ${idx === currentBookIndex ? 'var(--accent-primary)' : 'var(--warning)'};">// BOOK 0${idx+1} // 30-DAY BLOCK ${idx === currentBookIndex ? '(ACTIVE)' : ''}</div>
                     <h3>${b.title}</h3>
                     <p><strong>Target Focus:</strong> ${b.focus}</p>
+                    <div class="tactical-note"><strong>Tactical Takeaway:</strong> ${b.notes}<br><br><span style="color: var(--accent-primary);">Target Pace: ~10 pages / day</span></div>
                 `;
+
+                card.onclick = () => {
+                    playBeep(550, 'sine', 0.03);
+                    const wasExpanded = card.classList.contains('expanded');
+                    document.querySelectorAll('.card-item').forEach(c => c.classList.remove('expanded'));
+                    if (!wasExpanded) {
+                        card.classList.add('expanded');
+                    }
+                };
+
+                container.appendChild(card);
+            });
+        }
+
+        function renderFitness() {
+            const container = document.getElementById('fitnessGridContainer');
+            container.innerHTML = '';
+            fitnessModules.forEach((f, idx) => {
+                const card = document.createElement('div');
+                card.className = 'card-item';
+                card.innerHTML = `
+                    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--warning);">// MODULE 0${idx+1} // PERFORMANCE SPEC</div>
+                    <h3>${f.title}</h3>
+                    <p><strong>Category:</strong> ${f.subtitle}</p>
+                    <div class="tactical-note"><strong>Tactical Notes:</strong> ${f.notes}</div>
+                `;
+
+                card.onclick = () => {
+                    playBeep(550, 'sine', 0.03);
+                    const wasExpanded = card.classList.contains('expanded');
+                    document.querySelectorAll('#fitnessGridContainer .card-item').forEach(c => c.classList.remove('expanded'));
+                    if (!wasExpanded) {
+                        card.classList.add('expanded');
+                    }
+                };
+
                 container.appendChild(card);
             });
         }
 
         function updatePhaseBadge() {
             const diffDays = Math.floor((now - PHASE_START_DATE) / (1000 * 60 * 60 * 24));
-            let phaseNum = 1;
-            if (diffDays >= 180 && diffDays < 360) phaseNum = 2;
-            else if (diffDays >= 360 && diffDays < 540) phaseNum = 3;
-            else if (diffDays >= 540) phaseNum = 4;
-
+            const activeDays = Math.max(0, diffDays);
+            
+            let phaseNum = Math.floor(activeDays / 180) + 1;
+            if (phaseNum > 4) phaseNum = 4;
+            
             const phaseNames = ["Foundation", "Capacity & Strength", "Aviation Prep", "Peak Selection"];
             const badgeEl = document.getElementById('phaseBadge');
             if(badgeEl) badgeEl.innerHTML = `<span class="badge-dot"></span>Phase ${phaseNum}: ${phaseNames[phaseNum-1]}`;
         }
 
         function renderRoadmap() {
+            const diffDays = Math.floor((now - PHASE_START_DATE) / (1000 * 60 * 60 * 24));
+            const activeDays = Math.max(0, diffDays);
+            const currentPhaseIndex = Math.min(Math.floor(activeDays / 180), 3);
+            const daysLeftInPhase = 180 - (activeDays % 180);
+
             const container = document.getElementById('roadmapContainer');
             container.innerHTML = '';
             phases.forEach((p, idx) => {
+                const isCurrent = idx === currentPhaseIndex;
                 const card = document.createElement('div');
                 card.className = 'meta-card';
+                if(isCurrent) {
+                    card.style.borderColor = 'var(--border-active)';
+                    card.style.background = 'var(--accent-glow)';
+                }
+                
+                let phaseStatusStr = '';
+                if(isCurrent) phaseStatusStr = `<span style="color: var(--accent-primary);">[ACTIVE // ${daysLeftInPhase} Days Left]</span>`;
+                else if (idx < currentPhaseIndex) phaseStatusStr = `<span style="color: var(--success);">[COMPLETED]</span>`;
+                else phaseStatusStr = `<span style="color: var(--text-dim);">[LOCKED]</span>`;
+
                 card.innerHTML = `
-                    <div style="font-weight: 700; color: var(--accent-primary); margin-bottom: 0.4rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em;">// PHASE 0${idx + 1} TIMELINE</div>
-                    <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem;">${p.title}</div>
-                    <div>${p.desc}</div>
+                    <div style="font-weight: 700; color: var(--accent-primary); margin-bottom: 0.35rem; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.2rem;">
+                        <span>// PHASE 0${idx + 1} TIMELINE</span>
+                        ${phaseStatusStr}
+                    </div>
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem;">${p.title}</div>
+                    <div style="font-size: 0.78rem;">${p.desc}</div>
                 `;
                 container.appendChild(card);
             });
@@ -1826,6 +1050,7 @@
             renderDayPicker();
             renderSchedule();
             renderBooks();
+            renderFitness();
             renderRoadmap();
             updateProgress();
             updatePhaseBadge();
