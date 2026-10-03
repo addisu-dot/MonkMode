@@ -2,8 +2,13 @@
 <html lang="en" class="dark cyberpunk-cyan">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Monk Mode OS // Neural Command Deck Pro X</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monk Mode OS: a personal dashboard for daily schedules, a 10-book reading plan, fitness benchmarks and a two-year roadmap. Built by Addisu Legese Meharu.">
+    <meta property="og:title" content="Monk Mode OS">
+    <meta property="og:description" content="A personal dashboard for daily schedules, reading, fitness and long-term planning.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1220'/%3E%3Ctext x='16' y='23' font-size='20' font-family='monospace' font-weight='700' text-anchor='middle' fill='%2338bdf8'%3EM%3C/text%3E%3C/svg%3E">
+    <title>Monk Mode OS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
@@ -472,6 +477,13 @@
     </div>
 
     <script>
+        /* SAFE STORAGE: localStorage can throw when blocked (private mode, strict settings) */
+        const store = {
+            get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+            set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+            remove(k) { try { localStorage.removeItem(k); } catch (e) {} }
+        };
+
         /* TACTICAL AUDIO SYNTHESIZER ENGINE WITH THEME-AWARE FREQUENCIES */
         let audioEnabled = true;
         const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -517,6 +529,11 @@
         const canvas = document.getElementById('cyberBgCanvas');
         const ctx = canvas.getContext('2d');
         let width, height, particles = [];
+        let cachedAccent = '#38bdf8';
+        function refreshAccent() {
+            cachedAccent = getComputedStyle(document.documentElement).getPropertyValue('--accent-primary').trim() || '#38bdf8';
+        }
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         function resizeCanvas() {
             width = canvas.width = window.innerWidth;
@@ -542,7 +559,7 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent-primary').trim() || '#38bdf8';
+                ctx.fillStyle = cachedAccent;
                 ctx.globalAlpha = 0.4;
                 ctx.fill();
             }
@@ -550,9 +567,11 @@
 
         for (let i = 0; i < 45; i++) particles.push(new CyberNode());
 
+        let bgRunning = false;
         function animateCyberBg() {
+            bgRunning = true;
             ctx.clearRect(0, 0, width, height);
-            const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-primary').trim() || '#38bdf8';
+            const accentColor = cachedAccent;
             ctx.strokeStyle = accentColor;
             ctx.lineWidth = 0.5;
 
@@ -582,9 +601,11 @@
                     }
                 }
             }
-            requestAnimationFrame(animateCyberBg);
+            if (!reduceMotion && !document.hidden) requestAnimationFrame(animateCyberBg);
+            else bgRunning = false;
         }
         animateCyberBg();
+        document.addEventListener('visibilitychange', () => { if (!document.hidden && !reduceMotion && !bgRunning) animateCyberBg(); });
 
         /* CORE APPLICATION STATE */
         const CLASS_START_DATE = new Date('2026-11-10');
@@ -593,6 +614,12 @@
         const isClassMode = now >= CLASS_START_DATE;
         const currentModeKey = isClassMode ? 'ClassIntegration' : 'NonClass';
         const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        // Checks are stored per calendar date so Monday's ticks don't carry into next Monday
+        function dateKeyFor(dayName) {
+            const diff = daysOfWeek.indexOf(dayName) - now.getDay();
+            const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + diff);
+            return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        }
         let selectedDay = daysOfWeek[now.getDay()];
 
         const books = [
@@ -741,10 +768,10 @@
         };
 
         const phases = [
-            { title: "Phase 1: Foundation (Months 1–6)", desc: "Establish daily discipline, recover CS GPA baseline, master 1.5-mile run under 10:30, and complete core tactical reading list.", notes: "Establish foundational habits. Focus heavily on GPA recovery during early university blocks and strict adherence to physical training splits." },
+            { title: "Phase 1: Foundation (Months 1–6)", desc: "Establish daily discipline, build a strong academic baseline, master 1.5-mile run under 10:30, and complete core tactical reading list.", notes: "Establish foundational habits. Focus on academic consistency during early university blocks and strict adherence to physical training splits." },
             { title: "Phase 2: Acceleration (Months 7–12)", desc: "Intensify software portfolio development, flight physics study, English articulation, and physical stamina peaking.", notes: "Push advanced project complexity, hone technical aviation knowledge, and eliminate English speech hesitation via daily audio logs." },
-            { title: "Phase 3: Integration (Months 13–18)", desc: "Simulated aptitude and psychometric testing mastery, interview simulations, and peak physical conditioning.", notes: "Simulate Ethiopian Airlines cadet selection tests, psychometric exams, and fine-tune physical performance metrics to surpass all thresholds." },
-            { title: "Phase 4: Execution & Deployment (Months 19–24)", desc: "Final cadet application submission, assessment prep, and flawless execution.", notes: "Final polish of documentation, peak physical conditioning state, interview readiness, and absolute mental composure for selection day." }
+            { title: "Phase 3: Integration (Months 13–18)", desc: "Combine everything: ship a complete portfolio, sharpen interview skills, and hold peak physical conditioning.", notes: "Bring projects, fitness and study habits together. Practice technical interviews, refine documentation, and keep every benchmark above target." },
+            { title: "Phase 4: Execution & Deployment (Months 19–24)", desc: "Apply for internships and roles, finish final preparation, and execute with confidence.", notes: "Final polish of documentation and portfolio, peak physical conditioning, interview readiness, and calm focus on delivery." }
         ];
 
         /* KEYBOARD NAVIGATION ACCELERATOR */
@@ -783,9 +810,10 @@
         function setTheme(modeClass, themeClass, themeName) {
             playBeep(null, 'square', 0.04);
             document.documentElement.className = `${modeClass} ${themeClass}`;
-            localStorage.setItem('monk_mode_theme_mode', modeClass);
-            localStorage.setItem('monk_mode_theme_class', themeClass);
-            localStorage.setItem('monk_mode_theme_name', themeName);
+            refreshAccent();
+            store.set('monk_mode_theme_mode', modeClass);
+            store.set('monk_mode_theme_class', themeClass);
+            store.set('monk_mode_theme_name', themeName);
             
             document.getElementById('currentThemeLabel').innerText = themeName;
             document.getElementById('landingThemeLabel').innerText = themeName;
@@ -801,9 +829,9 @@
         }
 
         function loadSavedTheme() {
-            const savedMode = localStorage.getItem('monk_mode_theme_mode') || 'dark';
-            const savedClass = localStorage.getItem('monk_mode_theme_class') || 'cyberpunk-cyan';
-            const savedName = localStorage.getItem('monk_mode_theme_name') || 'Cyber Cyan';
+            const savedMode = store.get('monk_mode_theme_mode') || 'dark';
+            const savedClass = store.get('monk_mode_theme_class') || 'cyberpunk-cyan';
+            const savedName = store.get('monk_mode_theme_name') || 'Cyber Cyan';
             setTheme(savedMode, savedClass, savedName);
         }
 
@@ -888,8 +916,8 @@
                     }
                 }
                 
-                const checkboxId = `chk_${selectedDay}_${index}`;
-                const isChecked = localStorage.getItem(checkboxId) === 'true';
+                const checkboxId = `chk_${dateKeyFor(selectedDay)}_${index}`;
+                const isChecked = store.get(checkboxId) === 'true';
                 if(isChecked) card.style.opacity = '0.5';
 
                 card.innerHTML = `
@@ -922,7 +950,7 @@
         function toggleCheck(id) {
             playBeep(null, 'triangle', 0.04);
             const chk = document.getElementById(id);
-            localStorage.setItem(id, chk.checked);
+            store.set(id, chk.checked);
             renderSchedule();
         }
 
@@ -930,7 +958,7 @@
             playBeep(300, 'sawtooth', 0.06);
             const currentRoutine = schedules[currentModeKey][selectedDay] || [];
             currentRoutine.forEach((_, index) => {
-                localStorage.removeItem(`chk_${selectedDay}_${index}`);
+                store.remove(`chk_${dateKeyFor(selectedDay)}_${index}`);
             });
             renderSchedule();
         }
@@ -941,7 +969,7 @@
 
             let completed = 0;
             currentRoutine.forEach((_, index) => {
-                if(localStorage.getItem(`chk_${selectedDay}_${index}`) === 'true') completed++;
+                if(store.get(`chk_${dateKeyFor(selectedDay)}_${index}`) === 'true') completed++;
             });
 
             const pct = Math.round((completed / currentRoutine.length) * 100);
@@ -980,7 +1008,7 @@
                     card.style.background = 'var(--accent-glow)';
                 }
                 card.innerHTML = `
-                    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: ${idx === currentBookIndex ? 'var(--accent-primary)' : 'var(--warning)'};">// BOOK 0${idx+1} // 30-DAY BLOCK ${idx === currentBookIndex ? '(ACTIVE)' : ''}</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: ${idx === currentBookIndex ? 'var(--accent-primary)' : 'var(--warning)'};">// BOOK ${String(idx+1).padStart(2,'0')} // 30-DAY BLOCK ${idx === currentBookIndex ? '(ACTIVE)' : ''}</div>
                     <h3>${b.title}</h3>
                     <p><strong>Target Focus:</strong> ${b.focus}</p>
                     <div class="tactical-note"><strong>Tactical Takeaway:</strong> ${b.notes}<br><br><span style="color: var(--accent-primary);">Target Pace: ~10 pages / day</span></div>
@@ -1032,7 +1060,7 @@
             let phaseNum = Math.floor(activeDays / 180) + 1;
             if (phaseNum > 4) phaseNum = 4;
             
-            const phaseNames = ["Foundation", "Capacity & Strength", "Aviation Prep", "Peak Selection"];
+            const phaseNames = ["Foundation", "Acceleration", "Integration", "Execution & Deployment"];
             const badgeEl = document.getElementById('phaseBadge');
             if(badgeEl) badgeEl.innerHTML = `<span class="badge-dot"></span>Phase ${phaseNum}: ${phaseNames[phaseNum-1]}`;
         }
